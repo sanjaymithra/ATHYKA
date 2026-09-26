@@ -1,0 +1,16 @@
+{
+  "name": "athyka",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ATHYKA platform repository",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  }
+}
