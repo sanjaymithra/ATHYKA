@@ -1,0 +1,704 @@
+/* ==========================================================================
+   PHILOSOPHY STAGE V2 - ARCHITECTURAL / SOLAR-SYSTEM ORBIT
+   One Coordinate System: Stage Field with unified (cx, cy) origin.
+   ========================================================================== */
+
+.philosophy-stage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 64px;
+  box-sizing: border-box;
+  background-color: #000000;
+  overflow-x: clip;
+  overflow-y: visible;
+  perspective: 1100px;
+  scroll-margin-top: 64px;
+}
+
+/* Atmospheric Underlay: Subtle glimpse of ferrofluid & dark grain */
+.stage-fluid-underlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stage-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Stage Label Top-Left */
+.stage-label-tl {
+  position: absolute;
+  top: 84px;
+  left: 36px;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: rgba(246, 239, 221, 0.45);
+  pointer-events: none;
+  z-index: 15;
+  user-select: none;
+}
+
+/* Page Framing Corner Ticks */
+.stage-corner-tick {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.stage-tick-tl {
+  top: 80px;
+  left: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stage-tick-tr {
+  top: 80px;
+  right: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stage-tick-bl {
+  bottom: 32px;
+  left: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stage-tick-br {
+  bottom: 32px;
+  right: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   Stage Field: The Single Reference Bounding Box
+   left: 0, right: 0, top: 64px, bottom: 0
+   All items (canvas, quotes, icons) are positioned from (cx, cy) = (W/2, H/2).
+   ========================================================================== */
+.stage-field {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Orbit Blueprint Canvas (fills stage field) */
+.stage-orbit-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ==========================================================================
+   Centered Headline & Counter Stack
+   Anchored strictly at left: 50%, top: 50%, translate(-50%, -50%).
+   Shared grid cell so geometry never jumps.
+   ========================================================================== */
+.stage-headline-stack {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: min(64vw, 1180px);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Quote Display Grid Area */
+.quote-display-grid {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+/* Each Quote & Service Hover Block Shares Grid Area 1 / 1 */
+.quote-item-block {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.quote-item-block.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.quote-item-block.is-outgoing {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+/* Per-Line Mask Wrapper (overflow: hidden) */
+.quote-line-mask {
+  overflow: hidden;
+  display: block;
+  line-height: 0.98;
+  padding: 4px 12px;
+  margin: 0;
+}
+
+/* Typography: Inter, 600 weight, -0.045em letter-spacing */
+.quote-line-text {
+  display: inline-block;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: var(--q-size, 84px);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  color: #F6EFDD;
+  font-synthesis: none;
+  white-space: nowrap;
+  transform: translateY(105%);
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.quote-line-mask.line-1 .quote-line-text {
+  transition-delay: 0ms;
+}
+
+.quote-line-mask.line-2 .quote-line-text {
+  transition-delay: 90ms;
+}
+
+.quote-item-block.is-active .quote-line-text {
+  transform: translateY(0);
+}
+
+.quote-item-block.is-outgoing .quote-line-text {
+  transform: translateY(-105%);
+  transition-duration: 500ms;
+  transition-delay: 0ms;
+}
+
+/* True-Italic Gold Accent with Self-Drawing Underline */
+.quote-accent-word {
+  position: relative;
+  display: inline-block;
+  color: #D8C48A;
+  font-style: italic;
+  font-weight: 600;
+  font-synthesis: none;
+}
+
+.accent-underline-svg {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 10px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.accent-underline-path {
+  stroke: #D8C48A;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+}
+
+.quote-item-block.is-active .accent-underline-path {
+  animation: drawUnderline 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 350ms forwards;
+}
+
+@keyframes drawUnderline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Hover Service CTA (positioned absolutely under headline) */
+.stage-hover-cta {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #D8C48A;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-bottom: 1px solid rgba(216, 196, 138, 0.4);
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 300ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.quote-item-block.is-active .stage-hover-cta {
+  opacity: 1;
+}
+
+.stage-hover-cta:hover {
+  color: #F6EFDD;
+  border-color: #F6EFDD;
+}
+
+/* ==========================================================================
+   Counter & Progress Line (Child of the centered stack, placed below headline)
+   ========================================================================== */
+.stage-controls-stack {
+  position: absolute;
+  top: calc(100% + 28px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: auto;
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+.stage-headline-stack.is-service-hovered .stage-controls-stack {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.stage-counter {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.stage-progress-track {
+  width: 120px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #D8C48A;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.stage-progress-bar.is-running {
+  animation: stageProgressFill 3500ms linear forwards;
+}
+
+.stage-progress-bar.is-paused {
+  animation-play-state: paused;
+}
+
+@keyframes stageProgressFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ==========================================================================
+   Hint Line under Counter ("CLICK A PLANET TO EXPLORE")
+   ========================================================================== */
+.stage-hint-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: rgba(201, 181, 122, 0.8);
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  pointer-events: none;
+}
+
+.stage-hint-line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stage-hint-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #D8C48A;
+  animation: hintDotPulse 2200ms ease-in-out infinite;
+}
+
+@keyframes hintDotPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* ==========================================================================
+   Entrance Animation States (is-primed vs is-entered)
+   ========================================================================== */
+.philosophy-stage.is-primed .stage-corner-tick,
+.philosophy-stage.is-primed .stage-label-tl {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.philosophy-stage.is-primed .stage-orbit-canvas {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.philosophy-stage.is-primed .stage-controls-stack {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.philosophy-stage.is-primed .orbit-orb {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.philosophy-stage.is-primed .quote-line-text {
+  transform: translateY(105%) !important;
+  opacity: 0 !important;
+  transition: none !important;
+}
+
+.philosophy-stage.is-entered .stage-corner-tick,
+.philosophy-stage.is-entered .stage-label-tl {
+  opacity: 1;
+  transition: opacity 800ms ease 100ms;
+}
+
+.philosophy-stage.is-entered .stage-orbit-canvas {
+  opacity: 1;
+  transition: opacity 800ms ease 100ms;
+}
+
+.philosophy-stage.is-entered .stage-controls-stack {
+  opacity: 1;
+  transition: opacity 600ms ease 300ms;
+}
+
+.philosophy-stage.is-entered .orbit-orb {
+  opacity: 1;
+}
+
+.philosophy-stage.is-entered .orbit-orb:nth-of-type(1) {
+  animation: orbEnterScale 600ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+}
+
+.philosophy-stage.is-entered .orbit-orb:nth-of-type(2) {
+  animation: orbEnterScale 600ms cubic-bezier(0.16, 1, 0.3, 1) 300ms both;
+}
+
+@keyframes orbEnterScale {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Reduced Motion Manual Stepper */
+.reduced-motion-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  pointer-events: auto;
+}
+
+.reduced-motion-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #F6EFDD;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.reduced-motion-btn:hover {
+  border-color: #D8C48A;
+  color: #D8C48A;
+}
+
+/* ==========================================================================
+   Orbit Icons Layer (Desktop)
+   ========================================================================== */
+.stage-orbit-plane {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orbit-orb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+  outline: none;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: filter 300ms ease;
+}
+
+.orbit-orb:focus-visible {
+  outline: 2px solid #D8C48A;
+  outline-offset: 8px;
+  border-radius: 8px;
+}
+
+/* The SVG Object Component */
+.stage-object-svg {
+  display: block;
+  height: clamp(92px, 8.5vw, 140px);
+  width: auto;
+  aspect-ratio: 160 / 200;
+  overflow: visible;
+  transition: filter 300ms ease, transform 300ms ease;
+}
+
+.orbit-orb:hover .stage-object-svg,
+.orbit-orb:focus-visible .stage-object-svg {
+  filter: drop-shadow(0 0 24px rgba(216, 196, 138, 0.35));
+}
+
+/* Upright Monospace Label Below Icon */
+.orb-label-block {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  user-select: none;
+}
+
+.orb-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #F6EFDD;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 250ms ease;
+}
+
+.orbit-orb:hover .orb-label,
+.orbit-orb:focus-visible .orb-label {
+  color: #D8C48A;
+}
+
+.orb-theta-readout {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: rgba(246, 239, 221, 0.4);
+}
+
+/* ==========================================================================
+   Mobile & Low-Power Static Fallback Mode (<= 768px)
+   ========================================================================== */
+.stage-mobile-cards {
+  display: none;
+  width: 90%;
+  max-width: 520px;
+  margin-top: 48px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.static-orb-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.static-orb-card:hover {
+  border-color: #D8C48A;
+  background: rgba(216, 196, 138, 0.05);
+}
+
+.static-card-icon-box {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.static-orb-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #F6EFDD;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.static-orb-desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+/* Visually Hidden Helper for Screen Readers & SEO */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints & Reduced Motion
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .stage-headline-stack {
+    max-width: min(70vw, 1180px);
+  }
+  .stage-object-svg {
+    height: 92px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stage-orbit-canvas,
+  .stage-orbit-plane,
+  .stage-corner-tick,
+  .stage-label-tl {
+    display: none;
+  }
+
+  .stage-field {
+    position: relative;
+    top: 0;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    pointer-events: auto;
+  }
+
+  .stage-headline-stack {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    max-width: 88vw;
+    width: 100%;
+    pointer-events: auto;
+  }
+
+  .stage-controls-stack {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+
+  .stage-mobile-cards {
+    display: flex;
+    margin-top: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-line-text {
+    transform: none !important;
+    transition: none !important;
+  }
+  .accent-underline-path {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+  .stage-progress-bar {
+    animation: none !important;
+  }
+}
