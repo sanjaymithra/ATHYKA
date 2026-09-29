@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Section Layout: Responsive Left Gutter for PillNav & Content Width
+   ========================================================================== */
+
+.service-page-section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: clamp(60px, 8vh, 120px);
+  padding-bottom: clamp(60px, 8vh, 120px);
+
+  /* Desktop >= 1100px: 260px left gutter */
+  padding-left: 260px;
+  padding-right: clamp(24px, 4vw, 64px);
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .service-page-section {
+    /* Tablet 768px - 1099px: 200px left gutter */
+    padding-left: 200px;
+    padding-right: clamp(20px, 3vw, 48px);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-page-section {
+    /* Mobile < 768px: No gutter */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.service-section-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Section Header Typography */
+.service-section-header {
+  margin-bottom: clamp(32px, 5vh, 56px);
+}
+
+.service-section-eyebrow {
+  display: block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #d8c48a;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.service-section-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: #f6efdd;
+  margin: 0 0 16px 0;
+}
+
+.service-section-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: rgba(246, 239, 221, 0.75);
+  line-height: 1.55;
+  max-width: 680px;
+  margin: 0;
+}
+
+/* Framing Ticks */
+.section-frame-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.section-tick {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(246, 239, 221, 0.2);
+  border-style: solid;
+}
+
+.section-tick-tl {
+  top: 24px;
+  left: 24px;
+  border-width: 1px 0 0 1px;
+}
+
+.section-tick-tr {
+  top: 24px;
+  right: 24px;
+  border-width: 1px 1px 0 0;
+}
