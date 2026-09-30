@@ -1,0 +1,385 @@
+/* ==========================================================================
+   WorkshopsPage Styles
+   ========================================================================== */
+
+.ws-hero-section {
+  padding-top: clamp(100px, 16vh, 180px);
+}
+
+.ws-hero-content {
+  max-width: 980px;
+}
+
+.ws-hero-eyebrow {
+  display: block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #d8c48a;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.ws-hero-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(40px, 6.2vw, 84px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  color: #f6efdd;
+  margin: 0 0 28px 0;
+}
+
+.ws-hero-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.5;
+  color: rgba(246, 239, 221, 0.8);
+  max-width: 680px;
+  margin: 0 0 36px 0;
+}
+
+.ws-hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.ws-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 32px;
+  border-radius: 999px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ws-btn-primary {
+  background: #d8c48a;
+  color: #141414;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.ws-btn-primary:hover {
+  background: #f6efdd;
+  transform: translateY(-2px);
+}
+
+.ws-btn-secondary {
+  background: transparent;
+  color: #f6efdd;
+  border: 1px solid rgba(246, 239, 221, 0.25);
+}
+
+.ws-btn-secondary:hover {
+  border-color: #d8c48a;
+  color: #d8c48a;
+  transform: translateY(-2px);
+}
+
+.ws-btn-large {
+  height: 60px;
+  padding: 0 44px;
+  font-size: 14px;
+}
+
+.ws-hero-microcopy {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  color: rgba(246, 239, 221, 0.5);
+  letter-spacing: 0.02em;
+}
+
+/* Problems Grid */
+.ws-problems-wrapper {
+  margin-top: clamp(60px, 8vh, 100px);
+  padding-top: 40px;
+  border-top: 1px solid rgba(246, 239, 221, 0.12);
+}
+
+.ws-problems-header {
+  margin-bottom: 24px;
+}
+
+.ws-problems-title {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #d8c48a;
+  text-transform: uppercase;
+}
+
+.ws-problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.ws-problem-card {
+  padding: 24px;
+  background: rgba(18, 18, 16, 0.6);
+  border: 1px solid rgba(246, 239, 221, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ws-problem-provocation {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #f6efdd;
+}
+
+.ws-problem-arrow {
+  color: #d8c48a;
+  font-size: 18px;
+}
+
+.ws-problem-solution {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  color: #d8c48a;
+  letter-spacing: 0.04em;
+}
+
+/* Formats Grid */
+.ws-formats-wrapper {
+  margin-top: clamp(50px, 6vh, 80px);
+}
+
+.ws-formats-header {
+  margin-bottom: 24px;
+}
+
+.ws-formats-title {
+  display: block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #d8c48a;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ws-formats-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  color: rgba(246, 239, 221, 0.7);
+  margin: 0;
+}
+
+.ws-formats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.ws-format-card {
+  padding: 30px;
+  background: #0d0d0c;
+  border: 1px solid rgba(246, 239, 221, 0.12);
+  border-radius: 14px;
+}
+
+.ws-format-duration {
+  display: inline-block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  color: #d8c48a;
+  background: rgba(216, 196, 138, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.ws-format-name {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f6efdd;
+  margin: 0 0 16px 0;
+}
+
+.ws-format-who,
+.ws-format-leaves {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(246, 239, 221, 0.8);
+  margin: 0 0 10px 0;
+}
+
+.ws-format-who strong,
+.ws-format-leaves strong {
+  color: #f6efdd;
+}
+
+/* Past Workshops Grid */
+.ws-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.ws-past-card {
+  padding: 32px;
+  background: #0d0d0c;
+  border: 1px solid rgba(246, 239, 221, 0.12);
+  border-radius: 14px;
+}
+
+.ws-past-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  color: #d8c48a;
+  margin-bottom: 16px;
+}
+
+.ws-past-inst {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f6efdd;
+  margin: 0 0 12px 0;
+}
+
+.ws-past-topic {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  color: rgba(246, 239, 221, 0.8);
+  margin-bottom: 16px;
+}
+
+.ws-past-quote {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(216, 196, 138, 0.85);
+  border-left: 2px solid #d8c48a;
+  padding-left: 14px;
+  margin: 0;
+}
+
+/* Team Grid */
+.ws-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.ws-team-card {
+  padding: 32px;
+  background: #0d0d0c;
+  border: 1px solid rgba(246, 239, 221, 0.12);
+  border-radius: 14px;
+}
+
+.ws-team-monogram {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(216, 196, 138, 0.12);
+  border: 1px solid rgba(216, 196, 138, 0.3);
+  color: #d8c48a;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ws-team-name {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f6efdd;
+  margin: 0 0 6px 0;
+}
+
+.ws-team-role {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  color: #d8c48a;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ws-team-flex {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(246, 239, 221, 0.8);
+  margin: 0;
+}
+
+/* Proof Strip */
+.ws-proof-strip {
+  display: flex;
+  gap: 40px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(246, 239, 221, 0.12);
+}
+
+.ws-proof-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ws-proof-val {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #d8c48a;
+}
+
+.ws-proof-lbl {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  color: rgba(246, 239, 221, 0.6);
+  text-transform: uppercase;
+}
+
+/* Booking Section */
+.ws-book-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.ws-book-crosslink {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 13px;
+  color: #d8c48a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ws-book-crosslink:hover {
+  color: #f6efdd;
+  text-decoration: underline;
+}
