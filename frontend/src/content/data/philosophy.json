@@ -1,0 +1,80 @@
+{
+  "quotes": [
+    {
+      "id": "quote-01",
+      "status": "published",
+      "order": 1,
+      "lines": [
+        "Every build starts",
+        "with a *problem*."
+      ],
+      "updatedAt": "2026-10-01T12:00:00Z"
+    },
+    {
+      "id": "quote-02",
+      "status": "published",
+      "order": 2,
+      "lines": [
+        "We *think* first.",
+        "Then we build."
+      ],
+      "updatedAt": "2026-10-01T12:00:00Z"
+    },
+    {
+      "id": "quote-03",
+      "status": "published",
+      "order": 3,
+      "lines": [
+        "Built to solve",
+        "*real* problems."
+      ],
+      "updatedAt": "2026-10-01T12:00:00Z"
+    },
+    {
+      "id": "quote-04",
+      "status": "published",
+      "order": 4,
+      "lines": [
+        "What we build,",
+        "we *teach*."
+      ],
+      "updatedAt": "2026-10-01T12:00:00Z"
+    },
+    {
+      "id": "quote-05",
+      "status": "published",
+      "order": 5,
+      "lines": [
+        "Learn by building.",
+        "Build to *understand*."
+      ],
+      "updatedAt": "2026-10-01T12:00:00Z"
+    }
+  ],
+  "services": [
+    {
+      "id": "digital",
+      "number": "01",
+      "label": "01 — DIGITAL SERVICES",
+      "href": "/digital-services",
+      "lines": [
+        "Software, automation",
+        "and *AI*, engineered."
+      ],
+      "cta": "EXPLORE DIGITAL SERVICES →",
+      "description": "Software, automation and AI engineering."
+    },
+    {
+      "id": "workshops",
+      "number": "02",
+      "label": "02 — WORKSHOPS",
+      "href": "/workshops",
+      "lines": [
+        "Hands-on training.",
+        "We *come to you*."
+      ],
+      "cta": "BOOK A WORKSHOP →",
+      "description": "Hands-on technical curriculum delivered on-site."
+    }
+  ]
+}

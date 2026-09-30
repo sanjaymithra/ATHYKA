@@ -1,0 +1,68 @@
+{
+  "bookingUrl": "",
+  "contactEmail": "contact@athyka.com",
+  "leadEndpoint": "",
+  "social": {
+    "x": "https://x.com/athyka",
+    "linkedin": "https://linkedin.com/company/athyka"
+  },
+  "defaultCtaLabels": {
+    "bookCall": "BOOK A CALL",
+    "bookWorkshop": "BOOK A WORKSHOP",
+    "allAthyka": "\u2190 ALL OF ATHYKA"
+  },
+  "perPageMeta": {
+    "home": {
+      "title": "ATHYKA \u2014 Technology for Business. Technology for People.",
+      "description": "Wisdom in thoughts, purpose in creation. Software, automation and AI engineered with mathematical care."
+    },
+    "digitalServices": {
+      "title": "Digital Services \u2014 ATHYKA",
+      "description": "We start with the problem. Then we engineer the software, automation and AI that answers it."
+    },
+    "workshops": {
+      "title": "Workshops for Schools & Colleges \u2014 ATHYKA",
+      "description": "Hands-on workshops in software, automation and AI. We come to your campus."
+    }
+  },
+  "faq": [
+    {
+      "id": "faq-01",
+      "order": 1,
+      "status": "published",
+      "question": "How do you scope a project before charging anything?",
+      "answer": "We run an upfront diagnostic conversation to dissect the exact operational problem. You receive a concrete proposal with architecture options, fixed milestones, and clear deliverables before any commitment is made."
+    },
+    {
+      "id": "faq-02",
+      "order": 2,
+      "status": "published",
+      "question": "Can we integrate with our existing legacy systems and databases?",
+      "answer": "Yes. Most of our deployments bridge legacy ERPs, internal SQL databases, and third-party APIs. We design modern interfaces and automation layers that run smoothly on top of your existing infrastructure without forcing disruptive overhauls."
+    },
+    {
+      "id": "faq-03",
+      "order": 3,
+      "status": "published",
+      "question": "What happens if our operational requirements evolve midway?",
+      "answer": "We engineer in atomic, weekly sprints with live staging deployments. You test working software each week, allowing us to reprioritize backlog items and pivot requirements without throwing away progress or blowing up timelines."
+    }
+  ],
+  "processStepsStrip": [
+    {
+      "step": "01",
+      "title": "Problem Audit",
+      "desc": "We dissect the bottleneck, map data sources, and define mathematical success criteria."
+    },
+    {
+      "step": "02",
+      "title": "Architecture & Prototype",
+      "desc": "A validated clickable prototype and documented system schema delivered in the first week."
+    },
+    {
+      "step": "03",
+      "title": "Production Deployment",
+      "desc": "Incremental engineering with live staging builds, automated tests, and 100% code ownership."
+    }
+  ]
+}

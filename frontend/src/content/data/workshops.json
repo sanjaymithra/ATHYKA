@@ -1,0 +1,543 @@
+{
+  "meta": {
+    "title": "Workshops for Schools & Colleges \u2014 ATHYKA",
+    "description": "Hands-on workshops in software, automation and AI. We come to your campus."
+  },
+  "nav": {
+    "sections": [
+      {
+        "id": "home",
+        "label": "Home",
+        "order": 1
+      },
+      {
+        "id": "work",
+        "label": "Previous work",
+        "order": 2
+      },
+      {
+        "id": "about",
+        "label": "About",
+        "order": 3
+      },
+      {
+        "id": "book",
+        "label": "Book a workshop",
+        "order": 4,
+        "isPrimary": true
+      }
+    ],
+    "wordmark": "\u039bTHYK\u039b",
+    "routeLabel": "/ WORKSHOPS",
+    "backLabel": "\u2190 ALL OF ATHYKA",
+    "bookingCta": "BOOK A WORKSHOP",
+    "crossLink": {
+      "text": "NEED SOFTWARE BUILT? DIGITAL SERVICES \u2197",
+      "href": "/digital-services"
+    }
+  },
+  "hero": {
+    "eyebrow": "WORKSHOPS FOR SCHOOLS & COLLEGES",
+    "h1": "Your students know the theory.\nHave they *built* anything?",
+    "sub": "Hands-on workshops in software, automation and AI. We come to your campus.",
+    "primaryCta": "BOOK A WORKSHOP",
+    "secondaryCta": "SEE PREVIOUS WORK \u2193",
+    "microcopy": "For schools & colleges \u2014 we come to you."
+  },
+  "problems": {
+    "heading": "The gap on campus",
+    "items": [
+      {
+        "id": "ws-prob-01",
+        "status": "published",
+        "order": 1,
+        "provocation": "Final-year projects that all look the same.",
+        "solution": "Build-first sessions where every student ships something different",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "ws-prob-02",
+        "status": "published",
+        "order": 2,
+        "provocation": "Industry moves fast. The syllabus doesn't.",
+        "solution": "Workshops in what teams actually use today: software, automation, AI",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "ws-prob-03",
+        "status": "published",
+        "order": 3,
+        "provocation": "A guest lecture is forgotten by Monday.",
+        "solution": "Hands-on days students remember, and mention in interviews",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      }
+    ]
+  },
+  "formats": {
+    "heading": "Workshop Formats",
+    "sub": "Structured for depth, pace and measurable student deliverables.",
+    "emptyFallback": "Custom curricula available on request.",
+    "emptyCta": "BOOK A WORKSHOP",
+    "items": [
+      {
+        "id": "fmt-01",
+        "status": "published",
+        "order": 1,
+        "name": "Intro session",
+        "duration": "Half day (4h)",
+        "whoItsFor": "First and second-year cohorts exploring modern tooling",
+        "leavesWith": "A live deployed prototype and personal codebase",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "fmt-02",
+        "status": "published",
+        "order": 2,
+        "name": "Build day",
+        "duration": "Full day (8h)",
+        "whoItsFor": "Pre-final & final year engineering and design students",
+        "leavesWith": "A functional full-stack app or automation workflow",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "fmt-03",
+        "status": "published",
+        "order": 3,
+        "name": "Multi-day program",
+        "duration": "2\u20133 days",
+        "whoItsFor": "Department-wide intensives or hackathon preparations",
+        "leavesWith": "Production-ready portfolio projects reviewed by engineers",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      }
+    ]
+  },
+  "work": {
+    "heading": "Previous Work",
+    "sub": "Real campus sessions. Code shipped by students.",
+    "emptyFallback": "Upcoming campus schedules are being finalized. Want a session at your institution?",
+    "emptyCta": "BOOK A WORKSHOP",
+    "ctaBand": {
+      "heading": "Want this on your campus?",
+      "buttonText": "BOOK A WORKSHOP"
+    },
+    "pastWorkshops": [
+      {
+        "id": "past-01",
+        "slug": "indian-institute-of-technology-ai",
+        "status": "published",
+        "order": 1,
+        "institution": "Indian Institute of Technology",
+        "institutionType": "Engineering College",
+        "topic": "AI",
+        "city": "Bengaluru",
+        "year": 2026,
+        "date": "Spring 2026",
+        "attendees": "180 students",
+        "topicTitle": "Autonomous LLM Agents in Distributed Production",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "Indian Institute of Technology workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-02",
+        "slug": "national-institute-of-design-software",
+        "status": "published",
+        "order": 2,
+        "institution": "National Institute of Design",
+        "institutionType": "Design School",
+        "topic": "Software",
+        "city": "Ahmedabad",
+        "year": 2026,
+        "date": "Winter 2026",
+        "attendees": "95 designers",
+        "topicTitle": "Algorithmic Typography and Interactive Shaders",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "National Institute of Design workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-03",
+        "slug": "pes-university-automation",
+        "status": "published",
+        "order": 3,
+        "institution": "PES University",
+        "institutionType": "University",
+        "topic": "Automation",
+        "city": "Bengaluru",
+        "year": 2025,
+        "date": "Fall 2025",
+        "attendees": "220 students",
+        "topicTitle": "Event-Driven Microservices & Cloud Infrastructure",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "PES University workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-04",
+        "slug": "rv-college-of-engineering-ai",
+        "status": "published",
+        "order": 4,
+        "institution": "RV College of Engineering",
+        "institutionType": "Engineering College",
+        "topic": "AI",
+        "city": "Bengaluru",
+        "year": 2025,
+        "date": "Fall 2025",
+        "attendees": "160 students",
+        "topicTitle": "Full-Stack Vector Retrieval & RAG Pipelines",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "RV College of Engineering workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-05",
+        "slug": "bits-pilani-software",
+        "status": "published",
+        "order": 5,
+        "institution": "BITS Pilani",
+        "institutionType": "University",
+        "topic": "Software",
+        "city": "Hyderabad",
+        "year": 2025,
+        "date": "Summer 2025",
+        "attendees": "140 students",
+        "topicTitle": "High-Performance Systems with Rust & WebSockets",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "BITS Pilani workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-06",
+        "slug": "government-polytechnic-automation",
+        "status": "published",
+        "order": 6,
+        "institution": "Government Polytechnic",
+        "institutionType": "Polytechnic",
+        "topic": "Automation",
+        "city": "Pune",
+        "year": 2025,
+        "date": "Spring 2025",
+        "attendees": "110 students",
+        "topicTitle": "Linux System Administration & CI/CD Pipelines",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "Government Polytechnic workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-07",
+        "slug": "manipal-institute-of-technology-software",
+        "status": "published",
+        "order": 7,
+        "institution": "Manipal Institute of Technology",
+        "institutionType": "University",
+        "topic": "Software",
+        "city": "Manipal",
+        "year": 2024,
+        "date": "Fall 2024",
+        "attendees": "190 students",
+        "topicTitle": "Production Web Application Architecture",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "Manipal Institute of Technology workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-08",
+        "slug": "delhi-technological-university-ai",
+        "status": "published",
+        "order": 8,
+        "institution": "Delhi Technological University",
+        "institutionType": "Engineering College",
+        "topic": "AI",
+        "city": "Delhi",
+        "year": 2024,
+        "date": "Fall 2024",
+        "attendees": "250 students",
+        "topicTitle": "Applied Machine Learning for High-Throughput APIs",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "Delhi Technological University workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-09",
+        "slug": "srishti-institute-of-art-tech-software",
+        "status": "published",
+        "order": 9,
+        "institution": "Srishti Institute of Art & Tech",
+        "institutionType": "Design School",
+        "topic": "Software",
+        "city": "Bengaluru",
+        "year": 2024,
+        "date": "Spring 2024",
+        "attendees": "85 designers",
+        "topicTitle": "Computational Design & Generative Interfaces",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "Srishti Institute of Art & Tech workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-10",
+        "slug": "college-of-engineering-pune-automation",
+        "status": "published",
+        "order": 10,
+        "institution": "College of Engineering Pune",
+        "institutionType": "Engineering College",
+        "topic": "Automation",
+        "city": "Pune",
+        "year": 2024,
+        "date": "Winter 2024",
+        "attendees": "130 students",
+        "topicTitle": "Industrial IoT & Edge Computing Bridges",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "College of Engineering Pune workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-11",
+        "slug": "vellore-institute-of-technology-ai",
+        "status": "published",
+        "order": 11,
+        "institution": "Vellore Institute of Technology",
+        "institutionType": "University",
+        "topic": "AI",
+        "city": "Vellore",
+        "year": 2025,
+        "date": "Winter 2025",
+        "attendees": "310 students",
+        "topicTitle": "Neural Networks & Embedded Edge Inference",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "Vellore Institute of Technology workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "past-12",
+        "slug": "iiit-hyderabad-software",
+        "status": "published",
+        "order": 12,
+        "institution": "IIIT Hyderabad",
+        "institutionType": "University",
+        "topic": "Software",
+        "city": "Hyderabad",
+        "year": 2026,
+        "date": "Spring 2026",
+        "attendees": "175 students",
+        "topicTitle": "Modern Database Internals & Query Optimization",
+        "challenge": "Students had solid theoretical exposure but lacked experience deploying production code under real operational constraints.",
+        "outcomes": "Over 90% of cohorts shipped a deployed repository with automated testing by end-of-day.",
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+          "alt": "IIIT Hyderabad workshop in session",
+          "width": 800,
+          "height": 500
+        },
+        "quote": "Students were still debating architecture choices long after the session ended.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      }
+    ]
+  },
+  "about": {
+    "heading": "The people who'll be in your room.",
+    "sub": "Builders first, teachers second. That's why the sessions are hands-on.",
+    "emptyFallback": "Instructor profiles being confirmed. Speak with our team directly.",
+    "emptyCta": "BOOK A WORKSHOP",
+    "team": [
+      {
+        "id": "team-01",
+        "status": "published",
+        "order": 1,
+        "name": "Arjun Menon",
+        "role": "Founding Systems Engineer",
+        "flexLine": "Engineered distributed backends, LLM agents, and high-performance interactive interfaces",
+        "links": [
+          {
+            "label": "GitHub",
+            "url": "https://github.com"
+          }
+        ],
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop",
+          "alt": "Arjun Menon",
+          "width": 320,
+          "height": 320
+        },
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "team-02",
+        "status": "published",
+        "order": 2,
+        "name": "Dr. Kavya Rao",
+        "role": "Curriculum & Research Lead",
+        "flexLine": "Specialized in distributed consensus systems and engineering pedagogy with 8+ IEEE publications",
+        "links": [
+          {
+            "label": "ResearchGate",
+            "url": "https://researchgate.net"
+          }
+        ],
+        "photo": {
+          "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop",
+          "alt": "Dr. Kavya Rao",
+          "width": 320,
+          "height": 320
+        },
+        "updatedAt": "2026-10-01T12:00:00Z"
+      }
+    ],
+    "proof": [
+      {
+        "id": "proof-01",
+        "status": "published",
+        "order": 1,
+        "value": "100%",
+        "label": "Hands-on coding time",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proof-02",
+        "status": "published",
+        "order": 2,
+        "value": "1,850+",
+        "label": "Students taught across campuses",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proof-03",
+        "status": "published",
+        "order": 3,
+        "value": "12",
+        "label": "Premier institutions partnered",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      }
+    ]
+  },
+  "book": {
+    "heading": "Bring us to your campus.",
+    "sub": "Tell us about your students and your goals. We'll plan the day around them.",
+    "primaryCta": "BOOK A WORKSHOP",
+    "crossLinkText": "Need software built instead? See Digital Services \u2197",
+    "crossLinkHref": "/digital-services"
+  },
+  "dialog": {
+    "title": "Book a workshop",
+    "sub": "We come directly to your institution with turnkey materials, live demonstrations, and dedicated instructors.",
+    "submitLabel": "SUBMIT WORKSHOP REQUEST",
+    "successMessage": "Got it. We'll get back to you to plan the day.",
+    "fields": {
+      "institution": {
+        "label": "Institution Name",
+        "placeholder": "e.g. National Institute of Design"
+      },
+      "role": {
+        "label": "Your Role / Department",
+        "placeholder": "e.g. Head of Computer Science / Student Club Lead"
+      },
+      "city": {
+        "label": "City / Campus Location",
+        "placeholder": "e.g. Pune"
+      },
+      "participants": {
+        "label": "Expected Participants",
+        "options": [
+          "<50",
+          "50\u2013150",
+          "150\u2013400",
+          "400+"
+        ]
+      },
+      "topic": {
+        "label": "Focus Topic",
+        "options": [
+          "Software",
+          "Automation",
+          "AI",
+          "Not sure"
+        ]
+      },
+      "month": {
+        "label": "Preferred Month / Timeline",
+        "placeholder": "e.g. November 2026"
+      },
+      "message": {
+        "label": "Additional Context (optional)",
+        "placeholder": "Tell us about your cohort background and target outcomes..."
+      }
+    }
+  }
+}
