@@ -1,0 +1,192 @@
+/* ==========================================================================
+   DashboardLayout Styles: Top Bar, Static Noise, Page Transitions & Shell
+   ========================================================================== */
+
+.dashboard-shell-root {
+  min-height: 100vh;
+  background-color: #050505;
+  color: #f6efdd;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. Static Noise Layer: 4% opacity SVG/PNG data URI, no blend modes or filters */
+.dashboard-static-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* 2. Top Bar */
+.dashboard-top-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 3vw, 48px);
+  z-index: 100;
+  background: rgba(5, 5, 5, 0.92);
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+}
+
+.dashboard-top-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dashboard-wordmark-link {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #f6efdd;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(246, 239, 221, 0.15);
+  background: rgba(18, 18, 16, 0.8);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dashboard-wordmark-link:hover {
+  border-color: #d8c48a;
+  background: rgba(216, 196, 138, 0.12);
+  transform: translateY(-1px);
+}
+
+.dashboard-wordmark-link:focus-visible {
+  outline: 2px solid #d8c48a;
+  outline-offset: 3px;
+}
+
+.dashboard-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: #d8c48a;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.dashboard-section-tag:hover {
+  color: #f6efdd;
+}
+
+.dashboard-section-tag:focus-visible {
+  outline: 2px solid #d8c48a;
+  outline-offset: 2px;
+}
+
+.section-active-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d8c48a;
+  box-shadow: 0 0 8px rgba(216, 196, 138, 0.8);
+}
+
+/* Booking Pill */
+.dashboard-top-right {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-booking-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 24px;
+  background: #d8c48a;
+  color: #141414;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 16px rgba(216, 196, 138, 0.15);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-booking-pill:hover {
+  background: #f6efdd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 24px rgba(246, 239, 221, 0.25);
+}
+
+.dashboard-booking-pill:focus-visible {
+  outline: 2px solid #d8c48a;
+  outline-offset: 3px;
+}
+
+/* 3. Content Area */
+.dashboard-content-area {
+  flex: 1;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 32px clamp(20px, 3vw, 48px) 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* 4. Page Transition (260ms opacity + translateY(8px), transform & opacity only) */
+.dashboard-page-transition {
+  animation: pageEnterAnim 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes pageEnterAnim {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-skeleton-view {
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(246, 239, 221, 0.05);
+}
+
+@media (max-width: 640px) {
+  .dashboard-top-bar {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .dashboard-content-area {
+    padding: 20px 16px 0;
+  }
+
+  .dashboard-booking-pill {
+    height: 38px;
+    padding: 0 16px;
+    font-size: 11px;
+  }
+}
