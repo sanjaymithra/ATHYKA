@@ -1,0 +1,167 @@
+/* ==========================================================================
+   PillNav Styles: Bottom-Anchored Motion Stack & Bottom-Right Cross-Link
+   ========================================================================== */
+
+/* Bottom-Left Stack Container (Anchored to bottom) */
+.pillnav-stack-container {
+  position: fixed;
+  left: clamp(20px, 3vw, 48px);
+  bottom: clamp(24px, 4vh, 48px);
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.pillnav-mobile-toggle {
+  display: none;
+}
+
+/* Stack of Pills */
+.pillnav-pills-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: auto;
+}
+
+/* Motion Wrapper */
+.pillnav-motion-wrapper {
+  margin-top: -6px;
+  display: inline-flex;
+}
+
+.pillnav-motion-wrapper:first-child {
+  margin-top: 0;
+}
+
+/* Individual Pill */
+.pillnav-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 24px;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Hover uses hardware-accelerated transform ONLY (No height/padding/margin/filter transitions) */
+.pillnav-item:hover {
+  transform: translate3d(4px, -2px, 0);
+}
+
+.pillnav-item:focus-visible {
+  outline: 2px solid #d8c48a;
+  outline-offset: 3px;
+}
+
+/* Active Pill State */
+.pillnav-item.is-active {
+  padding: 18px 32px;
+  font-size: 17px;
+  font-weight: 700;
+  z-index: 10;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 0 20px rgba(216, 196, 138, 0.2);
+}
+
+.pillnav-inner-tilt {
+  display: inline-flex;
+  align-items: center;
+}
+
+.pillnav-item-text {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Bottom-Right Cross-Link */
+.pillnav-bottom-right {
+  position: fixed;
+  bottom: clamp(24px, 4vh, 48px);
+  right: clamp(20px, 3vw, 48px);
+  z-index: 95;
+  pointer-events: auto;
+}
+
+.pillnav-crosslink-pill {
+  display: inline-block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: #d8c48a;
+  background: rgba(18, 18, 16, 0.85);
+  border: 1px solid rgba(216, 196, 138, 0.25);
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease,
+              color 0.2s ease;
+}
+
+.pillnav-crosslink-pill:hover {
+  background: #d8c48a;
+  color: #141414;
+  border-color: #f6efdd;
+  transform: translate3d(0, -2px, 0);
+}
+
+.pillnav-crosslink-pill:focus-visible {
+  outline: 2px solid #d8c48a;
+  outline-offset: 3px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .pillnav-stack-container {
+    bottom: 16px;
+    left: 16px;
+    pointer-events: auto;
+  }
+
+  .pillnav-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #181816;
+    color: #f6efdd;
+    border: 1px solid rgba(216, 196, 138, 0.4);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .pillnav-pills-list {
+    display: none;
+    margin-bottom: 12px;
+  }
+
+  .pillnav-stack-container.is-mobile-open .pillnav-pills-list {
+    display: flex;
+  }
+
+  .pillnav-bottom-right {
+    display: none;
+  }
+}

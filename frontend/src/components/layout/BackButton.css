@@ -1,0 +1,104 @@
+/* ==========================================================================
+   BackButton & Breadcrumbs: Consistent Top-Left Navigation Header
+   ========================================================================== */
+
+.athyka-back-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 20;
+}
+
+.athyka-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #f6efdd;
+  text-decoration: none;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+}
+
+.athyka-back-btn:focus-visible {
+  outline: 2px solid #d8c48a;
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+.back-btn-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(216, 196, 138, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f6efdd;
+  background: rgba(18, 18, 16, 0.85);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.athyka-back-btn:hover .back-btn-circle {
+  border-color: #d8c48a;
+  background: rgba(216, 196, 138, 0.15);
+  transform: translateX(-2px);
+}
+
+.back-btn-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: #d8c48a;
+}
+
+/* Mono Breadcrumbs */
+.athyka-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(246, 239, 221, 0.55);
+}
+
+.breadcrumb-separator {
+  color: rgba(216, 196, 138, 0.35);
+  user-select: none;
+}
+
+.breadcrumb-item {
+  color: rgba(246, 239, 221, 0.7);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #d8c48a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.breadcrumb-link:focus-visible {
+  outline: 2px solid #d8c48a;
+  outline-offset: 2px;
+}
+
+.breadcrumb-item.is-current {
+  color: #f6efdd;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .athyka-breadcrumbs {
+    display: none;
+  }
+}
