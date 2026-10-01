@@ -1,0 +1,311 @@
+/* ==========================================================================
+   CaseStudyDetailPage Styles
+   ========================================================================== */
+
+.casestudy-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 64px;
+}
+
+/* Header */
+.casestudy-header {
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+  padding-bottom: 32px;
+}
+
+.casestudy-meta-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.casestudy-client-pill {
+  color: #d8c48a;
+  font-weight: 700;
+}
+
+.casestudy-dot {
+  color: rgba(246, 239, 221, 0.3);
+}
+
+.casestudy-industry,
+.casestudy-year {
+  color: rgba(246, 239, 221, 0.6);
+}
+
+.casestudy-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #f6efdd;
+  margin: 0 0 16px 0;
+}
+
+.casestudy-outcome-hero {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.45;
+  color: #d8c48a;
+  max-width: 820px;
+  margin: 0 0 24px 0;
+}
+
+.casestudy-services-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.casestudy-tag-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: rgba(246, 239, 221, 0.45);
+}
+
+.casestudy-service-link {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  background: rgba(216, 196, 138, 0.1);
+  border: 1px solid rgba(216, 196, 138, 0.25);
+  color: #f6efdd;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.18s ease;
+}
+
+.casestudy-service-link:hover {
+  background: #d8c48a;
+  color: #141414;
+}
+
+/* Gallery */
+.casestudy-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.casestudy-gallery-figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  background: #000;
+}
+
+.casestudy-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.casestudy-gallery-caption {
+  padding: 10px 14px;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: rgba(246, 239, 221, 0.5);
+  background: rgba(14, 14, 12, 0.8);
+}
+
+/* Narrative Grid */
+.casestudy-narrative-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .casestudy-narrative-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.narrative-card {
+  background: rgba(18, 18, 16, 0.65);
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+
+.narrative-eyebrow {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #d8c48a;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.narrative-heading {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0 0 14px 0;
+}
+
+.narrative-body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(246, 239, 221, 0.7);
+  margin: 0;
+}
+
+.narrative-metric-highlight {
+  color: #d8c48a;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Testimonial */
+.casestudy-testimonial-section {
+  background: rgba(24, 24, 20, 0.6);
+  border-left: 3px solid #d8c48a;
+  padding: 32px;
+  border-radius: 0 12px 12px 0;
+}
+
+.casestudy-quote {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-style: italic;
+  line-height: 1.5;
+  color: #f6efdd;
+  margin: 0 0 18px 0;
+}
+
+.casestudy-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.author-name {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #d8c48a;
+  font-style: normal;
+}
+
+.author-role {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  color: rgba(246, 239, 221, 0.55);
+}
+
+/* Ext link */
+.casestudy-ext-link-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.casestudy-external-btn {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #d8c48a;
+  text-decoration: none;
+  border-bottom: 1px solid #d8c48a;
+  padding-bottom: 4px;
+  transition: color 0.18s ease;
+}
+
+.casestudy-external-btn:hover {
+  color: #f6efdd;
+}
+
+/* Adjacent Navigation Strip */
+.casestudy-nav-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(246, 239, 221, 0.08);
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+}
+
+@media (max-width: 640px) {
+  .casestudy-nav-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.casestudy-nav-prev,
+.casestudy-nav-next {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: rgba(14, 14, 12, 0.4);
+  border: 1px solid rgba(246, 239, 221, 0.06);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.casestudy-nav-prev:hover,
+.casestudy-nav-next:hover {
+  border-color: #d8c48a;
+  transform: translateY(-2px);
+}
+
+.nav-dir-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #d8c48a;
+}
+
+.nav-proj-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f6efdd;
+}
+
+/* CTA Band */
+.casestudy-cta-band {
+  text-align: center;
+  padding: 48px 24px;
+  background: rgba(18, 18, 16, 0.7);
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta-band-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0;
+}
+
+.cta-band-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  color: rgba(246, 239, 221, 0.65);
+  max-width: 580px;
+  margin: 0 0 8px 0;
+}

@@ -1,0 +1,401 @@
+/* ==========================================================================
+   Work Index Page Styles: Filters, Responsive Grid, Pagination & Cards
+   ========================================================================== */
+
+.work-index-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-bottom: 48px;
+}
+
+/* 1. Header */
+.work-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+}
+
+.work-header-eyebrow {
+  display: block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #d8c48a;
+  margin-bottom: 8px;
+}
+
+.work-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f6efdd;
+  margin: 0;
+}
+
+.work-count-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  background: rgba(18, 18, 16, 0.8);
+  border: 1px solid rgba(216, 196, 138, 0.25);
+  border-radius: 999px;
+  padding: 8px 18px;
+}
+
+.count-number {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #d8c48a;
+}
+
+.count-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: rgba(246, 239, 221, 0.6);
+}
+
+/* 2. Filter Bar */
+.work-filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(14, 14, 12, 0.6);
+  border: 1px solid rgba(246, 239, 221, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.work-search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(8, 8, 7, 0.8);
+  border: 1px solid rgba(246, 239, 221, 0.12);
+  border-radius: 8px;
+  padding: 10px 16px;
+}
+
+.work-search-box:focus-within {
+  border-color: #d8c48a;
+}
+
+.search-icon {
+  color: rgba(246, 239, 221, 0.4);
+  flex-shrink: 0;
+}
+
+.work-search-input {
+  background: transparent;
+  border: none;
+  color: #f6efdd;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  width: 100%;
+}
+
+.work-search-input:focus {
+  outline: none;
+}
+
+.work-search-input::placeholder {
+  color: rgba(246, 239, 221, 0.35);
+}
+
+.search-clear-btn {
+  background: transparent;
+  border: none;
+  color: rgba(246, 239, 221, 0.5);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.search-clear-btn:hover {
+  color: #f6efdd;
+}
+
+.filter-chips-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chip-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-group-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #d8c48a;
+  min-width: 72px;
+}
+
+.filter-chip {
+  background: rgba(22, 22, 19, 0.7);
+  border: 1px solid rgba(246, 239, 221, 0.1);
+  color: rgba(246, 239, 221, 0.75);
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-transform: capitalize;
+}
+
+.filter-chip:hover {
+  border-color: rgba(216, 196, 138, 0.4);
+  color: #f6efdd;
+}
+
+.filter-chip.is-active {
+  background: #d8c48a;
+  color: #141414;
+  border-color: #d8c48a;
+  font-weight: 700;
+}
+
+/* 3. Cards Grid (3 col >= 1200px, 2 col >= 768px, 1 col below) */
+.work-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1199px) {
+  .work-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .work-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work-card {
+  background: rgba(16, 16, 14, 0.7);
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  content-visibility: auto;
+  contain-intrinsic-size: 380px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: #d8c48a;
+  background: rgba(22, 22, 18, 0.9);
+}
+
+.work-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #000;
+  overflow: hidden;
+}
+
+.work-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  filter: grayscale(20%);
+}
+
+.work-card:hover .work-card-img {
+  transform: scale(1.03);
+  filter: grayscale(0%);
+}
+
+.work-card-year {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(5, 5, 5, 0.85);
+  border: 1px solid rgba(246, 239, 221, 0.2);
+  border-radius: 999px;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #d8c48a;
+  padding: 3px 10px;
+}
+
+.work-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.work-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.work-card-client {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #d8c48a;
+  font-weight: 600;
+}
+
+.work-card-industry {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  color: rgba(246, 239, 221, 0.5);
+}
+
+.work-card-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+}
+
+.work-card-outcome {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(246, 239, 221, 0.65);
+  margin: 0 0 18px 0;
+  flex: 1;
+}
+
+.work-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.work-tag {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  background: rgba(246, 239, 221, 0.05);
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  border-radius: 4px;
+  padding: 3px 8px;
+  color: rgba(246, 239, 221, 0.6);
+  text-transform: capitalize;
+}
+
+/* Empty State */
+.work-empty-state {
+  text-align: center;
+  padding: 64px 20px;
+  background: rgba(14, 14, 12, 0.4);
+  border: 1px dashed rgba(246, 239, 221, 0.15);
+  border-radius: 12px;
+}
+
+.empty-state-msg {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  color: rgba(246, 239, 221, 0.7);
+  margin: 0 0 24px 0;
+}
+
+.empty-state-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 4. Numbered Pagination */
+.work-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(246, 239, 221, 0.08);
+}
+
+.pagination-btn {
+  background: rgba(18, 18, 16, 0.8);
+  border: 1px solid rgba(246, 239, 221, 0.15);
+  color: #f6efdd;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: #d8c48a;
+  color: #d8c48a;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination-num-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: rgba(246, 239, 221, 0.7);
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pagination-num-btn:hover {
+  border-color: rgba(216, 196, 138, 0.4);
+  color: #f6efdd;
+}
+
+.pagination-num-btn.is-active {
+  background: #d8c48a;
+  color: #141414;
+  font-weight: 700;
+  border-color: #d8c48a;
+}

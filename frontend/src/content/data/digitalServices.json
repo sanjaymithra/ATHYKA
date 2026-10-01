@@ -1,0 +1,2810 @@
+{
+  "meta": {
+    "title": "Digital Services \u2014 ATHYKA",
+    "description": "We start with the problem. Then we engineer the software, automation and AI that answers it."
+  },
+  "nav": {
+    "sections": [
+      {
+        "id": "home",
+        "label": "Home",
+        "order": 1
+      },
+      {
+        "id": "work",
+        "label": "Work",
+        "order": 2
+      },
+      {
+        "id": "services",
+        "label": "Services",
+        "order": 3
+      },
+      {
+        "id": "contact",
+        "label": "Contact",
+        "order": 4
+      }
+    ],
+    "wordmark": "\u039bTHYK\u039b",
+    "routeLabel": "/ DIGITAL SERVICES",
+    "backLabel": "\u2190 ALL OF ATHYKA",
+    "bookingCta": "BOOK A CALL",
+    "crossLink": {
+      "text": "LOOKING TO TRAIN YOUR TEAM? WORKSHOPS \u2197",
+      "href": "/workshops"
+    }
+  },
+  "hero": {
+    "eyebrow": "DIGITAL SERVICES",
+    "h1": "What is your software\nactually *solving*?",
+    "sub": "We start with the problem. Then we engineer the software, automation and AI that answers it.",
+    "primaryCta": "BOOK A CALL",
+    "secondaryCta": "SEE OUR WORK \u2193",
+    "microcopy": "Tell us the problem. We'll tell you honestly if we're the right fit."
+  },
+  "problems": {
+    "heading": "Sound familiar?",
+    "items": [
+      {
+        "id": "prob-01",
+        "status": "published",
+        "order": 1,
+        "provocation": "Your website looks fine. Nobody can find it.",
+        "solution": "SEO + web development",
+        "targetServiceId": "srv-01",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "targetServiceSlug": "web-development"
+      },
+      {
+        "id": "prob-02",
+        "status": "published",
+        "order": 2,
+        "provocation": "Your team copies data between five tools every day.",
+        "solution": "Automation + ERP systems",
+        "targetServiceId": "srv-03",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "targetServiceSlug": "erp-systems"
+      },
+      {
+        "id": "prob-03",
+        "status": "published",
+        "order": 3,
+        "provocation": "Everyone says 'add AI.' Nobody can say where.",
+        "solution": "AI integrations, with a plan",
+        "targetServiceId": "srv-04",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "targetServiceSlug": "ai-integrations"
+      }
+    ]
+  },
+  "work": {
+    "heading": "Selected Work",
+    "sub": "Engineering that solved a specific operational problem.",
+    "emptyFallback": "No public case studies confirmed yet. Tell us about your project.",
+    "emptyCta": "BOOK A CALL",
+    "ctaBand": {
+      "heading": "Seen something close to your problem? Tell us about yours.",
+      "buttonText": "BOOK A CALL"
+    },
+    "projects": [
+      {
+        "id": "proj-01",
+        "slug": "meridian-cargo-autonomous-route-and-freight-dispatch-engine",
+        "status": "published",
+        "order": 1,
+        "name": "Meridian Cargo \u2014 Autonomous Route & Freight Dispatch Engine",
+        "client": "Meridian Cargo",
+        "industry": "Logistics",
+        "year": 2026,
+        "featured": true,
+        "services": [
+          "ai-integrations",
+          "erp-systems",
+          "web-development"
+        ],
+        "outcome": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "challenge": "Freight routing took 45 minutes of manual dispatching per line.",
+        "approach": "Engineered an event-driven dispatch algorithm with live telematics sync.",
+        "result": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Meridian Cargo"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-02",
+        "slug": "aegis-payments-sub-millisecond-settlement-and-fraud-gateway",
+        "status": "published",
+        "order": 2,
+        "name": "Aegis Payments \u2014 Sub-Millisecond Settlement & Fraud Gateway",
+        "client": "Aegis Payments",
+        "industry": "Fintech",
+        "year": 2025,
+        "featured": true,
+        "services": [
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "challenge": "Card reconciliation was failing under peak volume spikes.",
+        "approach": "Built a distributed settlement ledger with Rust workers and PostgreSQL CDC.",
+        "result": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Aegis Payments"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-03",
+        "slug": "solaris-diagnostics-oncology-imaging-and-pathology-review-portal",
+        "status": "published",
+        "order": 3,
+        "name": "Solaris Diagnostics \u2014 Oncology Imaging & Pathology Review Portal",
+        "client": "Solaris Diagnostics",
+        "industry": "Healthcare",
+        "year": 2024,
+        "featured": true,
+        "services": [
+          "dashboard-systems",
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "challenge": "Clinicians waited 3 days for MRI scans to synchronize across regional nodes.",
+        "approach": "Architected a zero-footprint DICOM web viewer with progressive tile streaming.",
+        "result": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Solaris Diagnostics"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-04",
+        "slug": "axon-robotics-factory-floor-robot-fleet-orchestrator",
+        "status": "published",
+        "order": 4,
+        "name": "Axon Robotics \u2014 Factory Floor Robot Fleet Orchestrator",
+        "client": "Axon Robotics",
+        "industry": "SaaS",
+        "year": 2026,
+        "featured": true,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "maintenance-and-support"
+        ],
+        "outcome": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "challenge": "Assembly line telemetry was siloed across legacy PLCs with no central control.",
+        "approach": "Engineered an OPC-UA telemetry gateway with real-time WebSockets and Grafana bridges.",
+        "result": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Axon Robotics"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-05",
+        "slug": "prism-grid-distributed-microgrid-energy-balancing-dashboard",
+        "status": "published",
+        "order": 5,
+        "name": "Prism Grid \u2014 Distributed Microgrid Energy Balancing Dashboard",
+        "client": "Prism Grid",
+        "industry": "E-Commerce",
+        "year": 2025,
+        "featured": true,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "seo-optimization"
+        ],
+        "outcome": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "challenge": "Grid operators lacked sub-minute visibility into solar and battery storage reserves.",
+        "approach": "Built a high-frequency time-series dashboard visualizing kilowatt flows across 80 nodes.",
+        "result": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Prism Grid"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-06",
+        "slug": "kroma-media-global-editorial-content-engine-and-asset-pipeline",
+        "status": "published",
+        "order": 6,
+        "name": "Kroma Media \u2014 Global Editorial Content Engine & Asset Pipeline",
+        "client": "Kroma Media",
+        "industry": "Manufacturing",
+        "year": 2024,
+        "featured": true,
+        "services": [
+          "ai-integrations",
+          "booking-platforms",
+          "seo-optimization",
+          "web-development"
+        ],
+        "outcome": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "challenge": "Writers spent 30% of editorial hours manually tagging and formatting syndication feeds.",
+        "approach": "Integrated automated semantic entity extraction and markdown-first workflow tools.",
+        "result": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Kroma Media"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-07",
+        "slug": "nexus-commerce-headless-multi-region-b2b-procurement-suite",
+        "status": "published",
+        "order": 7,
+        "name": "Nexus Commerce \u2014 Headless Multi-Region B2B Procurement Suite",
+        "client": "Nexus Commerce",
+        "industry": "Media",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "booking-platforms",
+          "dashboard-systems",
+          "web-development"
+        ],
+        "outcome": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "challenge": "Wholesale buyers abandoned checkout due to slow enterprise tiered pricing tables.",
+        "approach": "Built an ultra-fast headless storefront with Edge caching and deterministic tier calculations.",
+        "result": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Nexus Commerce"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-08",
+        "slug": "stratum-capital-private-equity-deal-pipeline-and-compliance-crm",
+        "status": "published",
+        "order": 8,
+        "name": "Stratum Capital \u2014 Private Equity Deal Pipeline & Compliance CRM",
+        "client": "Stratum Capital",
+        "industry": "Real Estate",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "branding-and-identity",
+          "erp-systems",
+          "ui-ux-design"
+        ],
+        "outcome": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "challenge": "Due diligence documents were scattered across email threads and insecure cloud folders.",
+        "approach": "Engineered a secure tenant-isolated deal room with audit logging and automated KYC parsing.",
+        "result": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Stratum Capital"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-09",
+        "slug": "vesper-clinical-decentralized-clinical-trial-patient-engagement-app",
+        "status": "published",
+        "order": 9,
+        "name": "Vesper Clinical \u2014 Decentralized Clinical Trial Patient Engagement App",
+        "client": "Vesper Clinical",
+        "industry": "Energy",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "maintenance-and-support",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "challenge": "Patient dropout rates reached 38% due to complex daily symptom surveys.",
+        "approach": "Redesigned patient mobile-first interface with zero-friction biometrics and offline sync.",
+        "result": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Vesper Clinical"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-10",
+        "slug": "hyperion-cloud-multi-tenant-developer-observability-console",
+        "status": "published",
+        "order": 10,
+        "name": "Hyperion Cloud \u2014 Multi-Tenant Developer Observability Console",
+        "client": "Hyperion Cloud",
+        "industry": "Education",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "digital-marketing",
+          "ui-ux-design"
+        ],
+        "outcome": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "challenge": "Engineers struggled with sluggish query interfaces when searching petabyte logs.",
+        "approach": "Created a high-density, keyboard-driven observability UI with WebGL charts.",
+        "result": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Hyperion Cloud"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-11",
+        "slug": "meridian-cargo-b-autonomous-route-and-freight-dispatch-engine-ph-2",
+        "status": "published",
+        "order": 11,
+        "name": "Meridian Cargo B \u2014 Autonomous Route & Freight Dispatch Engine Ph 2",
+        "client": "Meridian Cargo B",
+        "industry": "Logistics",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "erp-systems",
+          "web-development"
+        ],
+        "outcome": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "challenge": "Freight routing took 45 minutes of manual dispatching per line.",
+        "approach": "Engineered an event-driven dispatch algorithm with live telematics sync.",
+        "result": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Meridian Cargo B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-12",
+        "slug": "aegis-payments-b-sub-millisecond-settlement-and-fraud-gateway-ph-2",
+        "status": "published",
+        "order": 12,
+        "name": "Aegis Payments B \u2014 Sub-Millisecond Settlement & Fraud Gateway Ph 2",
+        "client": "Aegis Payments B",
+        "industry": "Fintech",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "challenge": "Card reconciliation was failing under peak volume spikes.",
+        "approach": "Built a distributed settlement ledger with Rust workers and PostgreSQL CDC.",
+        "result": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Aegis Payments B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-13",
+        "slug": "solaris-diagnostics-b-oncology-imaging-and-pathology-review-portal-ph-2",
+        "status": "published",
+        "order": 13,
+        "name": "Solaris Diagnostics B \u2014 Oncology Imaging & Pathology Review Portal Ph 2",
+        "client": "Solaris Diagnostics B",
+        "industry": "Healthcare",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "challenge": "Clinicians waited 3 days for MRI scans to synchronize across regional nodes.",
+        "approach": "Architected a zero-footprint DICOM web viewer with progressive tile streaming.",
+        "result": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Solaris Diagnostics B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-14",
+        "slug": "axon-robotics-b-factory-floor-robot-fleet-orchestrator-ph-2",
+        "status": "published",
+        "order": 14,
+        "name": "Axon Robotics B \u2014 Factory Floor Robot Fleet Orchestrator Ph 2",
+        "client": "Axon Robotics B",
+        "industry": "SaaS",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "maintenance-and-support"
+        ],
+        "outcome": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "challenge": "Assembly line telemetry was siloed across legacy PLCs with no central control.",
+        "approach": "Engineered an OPC-UA telemetry gateway with real-time WebSockets and Grafana bridges.",
+        "result": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Axon Robotics B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-15",
+        "slug": "prism-grid-b-distributed-microgrid-energy-balancing-dashboard-ph-2",
+        "status": "published",
+        "order": 15,
+        "name": "Prism Grid B \u2014 Distributed Microgrid Energy Balancing Dashboard Ph 2",
+        "client": "Prism Grid B",
+        "industry": "E-Commerce",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "seo-optimization"
+        ],
+        "outcome": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "challenge": "Grid operators lacked sub-minute visibility into solar and battery storage reserves.",
+        "approach": "Built a high-frequency time-series dashboard visualizing kilowatt flows across 80 nodes.",
+        "result": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Prism Grid B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-16",
+        "slug": "kroma-media-b-global-editorial-content-engine-and-asset-pipeline-ph-2",
+        "status": "published",
+        "order": 16,
+        "name": "Kroma Media B \u2014 Global Editorial Content Engine & Asset Pipeline Ph 2",
+        "client": "Kroma Media B",
+        "industry": "Manufacturing",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "booking-platforms",
+          "seo-optimization",
+          "web-development"
+        ],
+        "outcome": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "challenge": "Writers spent 30% of editorial hours manually tagging and formatting syndication feeds.",
+        "approach": "Integrated automated semantic entity extraction and markdown-first workflow tools.",
+        "result": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Kroma Media B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-17",
+        "slug": "nexus-commerce-b-headless-multi-region-b2b-procurement-suite-ph-2",
+        "status": "published",
+        "order": 17,
+        "name": "Nexus Commerce B \u2014 Headless Multi-Region B2B Procurement Suite Ph 2",
+        "client": "Nexus Commerce B",
+        "industry": "Media",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "booking-platforms",
+          "dashboard-systems",
+          "web-development"
+        ],
+        "outcome": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "challenge": "Wholesale buyers abandoned checkout due to slow enterprise tiered pricing tables.",
+        "approach": "Built an ultra-fast headless storefront with Edge caching and deterministic tier calculations.",
+        "result": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Nexus Commerce B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-18",
+        "slug": "stratum-capital-b-private-equity-deal-pipeline-and-compliance-crm-ph-2",
+        "status": "published",
+        "order": 18,
+        "name": "Stratum Capital B \u2014 Private Equity Deal Pipeline & Compliance CRM Ph 2",
+        "client": "Stratum Capital B",
+        "industry": "Real Estate",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "branding-and-identity",
+          "erp-systems",
+          "ui-ux-design"
+        ],
+        "outcome": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "challenge": "Due diligence documents were scattered across email threads and insecure cloud folders.",
+        "approach": "Engineered a secure tenant-isolated deal room with audit logging and automated KYC parsing.",
+        "result": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Stratum Capital B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-19",
+        "slug": "vesper-clinical-b-decentralized-clinical-trial-patient-engagement-app-ph-2",
+        "status": "published",
+        "order": 19,
+        "name": "Vesper Clinical B \u2014 Decentralized Clinical Trial Patient Engagement App Ph 2",
+        "client": "Vesper Clinical B",
+        "industry": "Energy",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "maintenance-and-support",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "challenge": "Patient dropout rates reached 38% due to complex daily symptom surveys.",
+        "approach": "Redesigned patient mobile-first interface with zero-friction biometrics and offline sync.",
+        "result": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Vesper Clinical B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-20",
+        "slug": "hyperion-cloud-b-multi-tenant-developer-observability-console-ph-2",
+        "status": "published",
+        "order": 20,
+        "name": "Hyperion Cloud B \u2014 Multi-Tenant Developer Observability Console Ph 2",
+        "client": "Hyperion Cloud B",
+        "industry": "Education",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "digital-marketing",
+          "ui-ux-design"
+        ],
+        "outcome": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "challenge": "Engineers struggled with sluggish query interfaces when searching petabyte logs.",
+        "approach": "Created a high-density, keyboard-driven observability UI with WebGL charts.",
+        "result": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 2 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 2 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Hyperion Cloud B"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-21",
+        "slug": "meridian-cargo-c-autonomous-route-and-freight-dispatch-engine-ph-3",
+        "status": "published",
+        "order": 21,
+        "name": "Meridian Cargo C \u2014 Autonomous Route & Freight Dispatch Engine Ph 3",
+        "client": "Meridian Cargo C",
+        "industry": "Logistics",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "erp-systems",
+          "web-development"
+        ],
+        "outcome": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "challenge": "Freight routing took 45 minutes of manual dispatching per line.",
+        "approach": "Engineered an event-driven dispatch algorithm with live telematics sync.",
+        "result": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Meridian Cargo C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-22",
+        "slug": "aegis-payments-c-sub-millisecond-settlement-and-fraud-gateway-ph-3",
+        "status": "published",
+        "order": 22,
+        "name": "Aegis Payments C \u2014 Sub-Millisecond Settlement & Fraud Gateway Ph 3",
+        "client": "Aegis Payments C",
+        "industry": "Fintech",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "challenge": "Card reconciliation was failing under peak volume spikes.",
+        "approach": "Built a distributed settlement ledger with Rust workers and PostgreSQL CDC.",
+        "result": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Aegis Payments C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-23",
+        "slug": "solaris-diagnostics-c-oncology-imaging-and-pathology-review-portal-ph-3",
+        "status": "published",
+        "order": 23,
+        "name": "Solaris Diagnostics C \u2014 Oncology Imaging & Pathology Review Portal Ph 3",
+        "client": "Solaris Diagnostics C",
+        "industry": "Healthcare",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "challenge": "Clinicians waited 3 days for MRI scans to synchronize across regional nodes.",
+        "approach": "Architected a zero-footprint DICOM web viewer with progressive tile streaming.",
+        "result": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Solaris Diagnostics C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-24",
+        "slug": "axon-robotics-c-factory-floor-robot-fleet-orchestrator-ph-3",
+        "status": "published",
+        "order": 24,
+        "name": "Axon Robotics C \u2014 Factory Floor Robot Fleet Orchestrator Ph 3",
+        "client": "Axon Robotics C",
+        "industry": "SaaS",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "maintenance-and-support"
+        ],
+        "outcome": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "challenge": "Assembly line telemetry was siloed across legacy PLCs with no central control.",
+        "approach": "Engineered an OPC-UA telemetry gateway with real-time WebSockets and Grafana bridges.",
+        "result": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Axon Robotics C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-25",
+        "slug": "prism-grid-c-distributed-microgrid-energy-balancing-dashboard-ph-3",
+        "status": "published",
+        "order": 25,
+        "name": "Prism Grid C \u2014 Distributed Microgrid Energy Balancing Dashboard Ph 3",
+        "client": "Prism Grid C",
+        "industry": "E-Commerce",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "seo-optimization"
+        ],
+        "outcome": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "challenge": "Grid operators lacked sub-minute visibility into solar and battery storage reserves.",
+        "approach": "Built a high-frequency time-series dashboard visualizing kilowatt flows across 80 nodes.",
+        "result": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Prism Grid C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-26",
+        "slug": "kroma-media-c-global-editorial-content-engine-and-asset-pipeline-ph-3",
+        "status": "published",
+        "order": 26,
+        "name": "Kroma Media C \u2014 Global Editorial Content Engine & Asset Pipeline Ph 3",
+        "client": "Kroma Media C",
+        "industry": "Manufacturing",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "booking-platforms",
+          "seo-optimization",
+          "web-development"
+        ],
+        "outcome": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "challenge": "Writers spent 30% of editorial hours manually tagging and formatting syndication feeds.",
+        "approach": "Integrated automated semantic entity extraction and markdown-first workflow tools.",
+        "result": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Kroma Media C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-27",
+        "slug": "nexus-commerce-c-headless-multi-region-b2b-procurement-suite-ph-3",
+        "status": "published",
+        "order": 27,
+        "name": "Nexus Commerce C \u2014 Headless Multi-Region B2B Procurement Suite Ph 3",
+        "client": "Nexus Commerce C",
+        "industry": "Media",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "booking-platforms",
+          "dashboard-systems",
+          "web-development"
+        ],
+        "outcome": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "challenge": "Wholesale buyers abandoned checkout due to slow enterprise tiered pricing tables.",
+        "approach": "Built an ultra-fast headless storefront with Edge caching and deterministic tier calculations.",
+        "result": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Nexus Commerce C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-28",
+        "slug": "stratum-capital-c-private-equity-deal-pipeline-and-compliance-crm-ph-3",
+        "status": "published",
+        "order": 28,
+        "name": "Stratum Capital C \u2014 Private Equity Deal Pipeline & Compliance CRM Ph 3",
+        "client": "Stratum Capital C",
+        "industry": "Real Estate",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "branding-and-identity",
+          "erp-systems",
+          "ui-ux-design"
+        ],
+        "outcome": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "challenge": "Due diligence documents were scattered across email threads and insecure cloud folders.",
+        "approach": "Engineered a secure tenant-isolated deal room with audit logging and automated KYC parsing.",
+        "result": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Stratum Capital C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-29",
+        "slug": "vesper-clinical-c-decentralized-clinical-trial-patient-engagement-app-ph-3",
+        "status": "published",
+        "order": 29,
+        "name": "Vesper Clinical C \u2014 Decentralized Clinical Trial Patient Engagement App Ph 3",
+        "client": "Vesper Clinical C",
+        "industry": "Energy",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "maintenance-and-support",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "challenge": "Patient dropout rates reached 38% due to complex daily symptom surveys.",
+        "approach": "Redesigned patient mobile-first interface with zero-friction biometrics and offline sync.",
+        "result": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Vesper Clinical C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-30",
+        "slug": "hyperion-cloud-c-multi-tenant-developer-observability-console-ph-3",
+        "status": "published",
+        "order": 30,
+        "name": "Hyperion Cloud C \u2014 Multi-Tenant Developer Observability Console Ph 3",
+        "client": "Hyperion Cloud C",
+        "industry": "Education",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "digital-marketing",
+          "ui-ux-design"
+        ],
+        "outcome": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "challenge": "Engineers struggled with sluggish query interfaces when searching petabyte logs.",
+        "approach": "Created a high-density, keyboard-driven observability UI with WebGL charts.",
+        "result": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 3 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 3 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Hyperion Cloud C"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-31",
+        "slug": "meridian-cargo-d-autonomous-route-and-freight-dispatch-engine-ph-4",
+        "status": "published",
+        "order": 31,
+        "name": "Meridian Cargo D \u2014 Autonomous Route & Freight Dispatch Engine Ph 4",
+        "client": "Meridian Cargo D",
+        "industry": "Logistics",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "erp-systems",
+          "web-development"
+        ],
+        "outcome": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "challenge": "Freight routing took 45 minutes of manual dispatching per line.",
+        "approach": "Engineered an event-driven dispatch algorithm with live telematics sync.",
+        "result": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Meridian Cargo D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-32",
+        "slug": "aegis-payments-d-sub-millisecond-settlement-and-fraud-gateway-ph-4",
+        "status": "published",
+        "order": 32,
+        "name": "Aegis Payments D \u2014 Sub-Millisecond Settlement & Fraud Gateway Ph 4",
+        "client": "Aegis Payments D",
+        "industry": "Fintech",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "challenge": "Card reconciliation was failing under peak volume spikes.",
+        "approach": "Built a distributed settlement ledger with Rust workers and PostgreSQL CDC.",
+        "result": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Aegis Payments D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-33",
+        "slug": "solaris-diagnostics-d-oncology-imaging-and-pathology-review-portal-ph-4",
+        "status": "published",
+        "order": 33,
+        "name": "Solaris Diagnostics D \u2014 Oncology Imaging & Pathology Review Portal Ph 4",
+        "client": "Solaris Diagnostics D",
+        "industry": "Healthcare",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "challenge": "Clinicians waited 3 days for MRI scans to synchronize across regional nodes.",
+        "approach": "Architected a zero-footprint DICOM web viewer with progressive tile streaming.",
+        "result": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Solaris Diagnostics D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-34",
+        "slug": "axon-robotics-d-factory-floor-robot-fleet-orchestrator-ph-4",
+        "status": "published",
+        "order": 34,
+        "name": "Axon Robotics D \u2014 Factory Floor Robot Fleet Orchestrator Ph 4",
+        "client": "Axon Robotics D",
+        "industry": "SaaS",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "maintenance-and-support"
+        ],
+        "outcome": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "challenge": "Assembly line telemetry was siloed across legacy PLCs with no central control.",
+        "approach": "Engineered an OPC-UA telemetry gateway with real-time WebSockets and Grafana bridges.",
+        "result": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Axon Robotics D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-35",
+        "slug": "prism-grid-d-distributed-microgrid-energy-balancing-dashboard-ph-4",
+        "status": "published",
+        "order": 35,
+        "name": "Prism Grid D \u2014 Distributed Microgrid Energy Balancing Dashboard Ph 4",
+        "client": "Prism Grid D",
+        "industry": "E-Commerce",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "seo-optimization"
+        ],
+        "outcome": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "challenge": "Grid operators lacked sub-minute visibility into solar and battery storage reserves.",
+        "approach": "Built a high-frequency time-series dashboard visualizing kilowatt flows across 80 nodes.",
+        "result": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Prism Grid D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-36",
+        "slug": "kroma-media-d-global-editorial-content-engine-and-asset-pipeline-ph-4",
+        "status": "published",
+        "order": 36,
+        "name": "Kroma Media D \u2014 Global Editorial Content Engine & Asset Pipeline Ph 4",
+        "client": "Kroma Media D",
+        "industry": "Manufacturing",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "booking-platforms",
+          "seo-optimization",
+          "web-development"
+        ],
+        "outcome": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "challenge": "Writers spent 30% of editorial hours manually tagging and formatting syndication feeds.",
+        "approach": "Integrated automated semantic entity extraction and markdown-first workflow tools.",
+        "result": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Kroma Media D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-37",
+        "slug": "nexus-commerce-d-headless-multi-region-b2b-procurement-suite-ph-4",
+        "status": "published",
+        "order": 37,
+        "name": "Nexus Commerce D \u2014 Headless Multi-Region B2B Procurement Suite Ph 4",
+        "client": "Nexus Commerce D",
+        "industry": "Media",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "booking-platforms",
+          "dashboard-systems",
+          "web-development"
+        ],
+        "outcome": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "challenge": "Wholesale buyers abandoned checkout due to slow enterprise tiered pricing tables.",
+        "approach": "Built an ultra-fast headless storefront with Edge caching and deterministic tier calculations.",
+        "result": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Nexus Commerce D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-38",
+        "slug": "stratum-capital-d-private-equity-deal-pipeline-and-compliance-crm-ph-4",
+        "status": "published",
+        "order": 38,
+        "name": "Stratum Capital D \u2014 Private Equity Deal Pipeline & Compliance CRM Ph 4",
+        "client": "Stratum Capital D",
+        "industry": "Real Estate",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "branding-and-identity",
+          "erp-systems",
+          "ui-ux-design"
+        ],
+        "outcome": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "challenge": "Due diligence documents were scattered across email threads and insecure cloud folders.",
+        "approach": "Engineered a secure tenant-isolated deal room with audit logging and automated KYC parsing.",
+        "result": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Stratum Capital D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-39",
+        "slug": "vesper-clinical-d-decentralized-clinical-trial-patient-engagement-app-ph-4",
+        "status": "published",
+        "order": 39,
+        "name": "Vesper Clinical D \u2014 Decentralized Clinical Trial Patient Engagement App Ph 4",
+        "client": "Vesper Clinical D",
+        "industry": "Energy",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "maintenance-and-support",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "challenge": "Patient dropout rates reached 38% due to complex daily symptom surveys.",
+        "approach": "Redesigned patient mobile-first interface with zero-friction biometrics and offline sync.",
+        "result": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Vesper Clinical D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-40",
+        "slug": "hyperion-cloud-d-multi-tenant-developer-observability-console-ph-4",
+        "status": "published",
+        "order": 40,
+        "name": "Hyperion Cloud D \u2014 Multi-Tenant Developer Observability Console Ph 4",
+        "client": "Hyperion Cloud D",
+        "industry": "Education",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "digital-marketing",
+          "ui-ux-design"
+        ],
+        "outcome": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "challenge": "Engineers struggled with sluggish query interfaces when searching petabyte logs.",
+        "approach": "Created a high-density, keyboard-driven observability UI with WebGL charts.",
+        "result": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 4 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 4 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Hyperion Cloud D"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-41",
+        "slug": "meridian-cargo-e-autonomous-route-and-freight-dispatch-engine-ph-5",
+        "status": "published",
+        "order": 41,
+        "name": "Meridian Cargo E \u2014 Autonomous Route & Freight Dispatch Engine Ph 5",
+        "client": "Meridian Cargo E",
+        "industry": "Logistics",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "erp-systems",
+          "web-development"
+        ],
+        "outcome": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "challenge": "Freight routing took 45 minutes of manual dispatching per line.",
+        "approach": "Engineered an event-driven dispatch algorithm with live telematics sync.",
+        "result": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Meridian Cargo E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-42",
+        "slug": "aegis-payments-e-sub-millisecond-settlement-and-fraud-gateway-ph-5",
+        "status": "published",
+        "order": 42,
+        "name": "Aegis Payments E \u2014 Sub-Millisecond Settlement & Fraud Gateway Ph 5",
+        "client": "Aegis Payments E",
+        "industry": "Fintech",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "challenge": "Card reconciliation was failing under peak volume spikes.",
+        "approach": "Built a distributed settlement ledger with Rust workers and PostgreSQL CDC.",
+        "result": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Aegis Payments E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-43",
+        "slug": "solaris-diagnostics-e-oncology-imaging-and-pathology-review-portal-ph-5",
+        "status": "published",
+        "order": 43,
+        "name": "Solaris Diagnostics E \u2014 Oncology Imaging & Pathology Review Portal Ph 5",
+        "client": "Solaris Diagnostics E",
+        "industry": "Healthcare",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "challenge": "Clinicians waited 3 days for MRI scans to synchronize across regional nodes.",
+        "approach": "Architected a zero-footprint DICOM web viewer with progressive tile streaming.",
+        "result": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Solaris Diagnostics E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-44",
+        "slug": "axon-robotics-e-factory-floor-robot-fleet-orchestrator-ph-5",
+        "status": "published",
+        "order": 44,
+        "name": "Axon Robotics E \u2014 Factory Floor Robot Fleet Orchestrator Ph 5",
+        "client": "Axon Robotics E",
+        "industry": "SaaS",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "maintenance-and-support"
+        ],
+        "outcome": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "challenge": "Assembly line telemetry was siloed across legacy PLCs with no central control.",
+        "approach": "Engineered an OPC-UA telemetry gateway with real-time WebSockets and Grafana bridges.",
+        "result": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Axon Robotics E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-45",
+        "slug": "prism-grid-e-distributed-microgrid-energy-balancing-dashboard-ph-5",
+        "status": "published",
+        "order": 45,
+        "name": "Prism Grid E \u2014 Distributed Microgrid Energy Balancing Dashboard Ph 5",
+        "client": "Prism Grid E",
+        "industry": "E-Commerce",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "seo-optimization"
+        ],
+        "outcome": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "challenge": "Grid operators lacked sub-minute visibility into solar and battery storage reserves.",
+        "approach": "Built a high-frequency time-series dashboard visualizing kilowatt flows across 80 nodes.",
+        "result": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Prism Grid E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-46",
+        "slug": "kroma-media-e-global-editorial-content-engine-and-asset-pipeline-ph-5",
+        "status": "published",
+        "order": 46,
+        "name": "Kroma Media E \u2014 Global Editorial Content Engine & Asset Pipeline Ph 5",
+        "client": "Kroma Media E",
+        "industry": "Manufacturing",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "booking-platforms",
+          "seo-optimization",
+          "web-development"
+        ],
+        "outcome": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "challenge": "Writers spent 30% of editorial hours manually tagging and formatting syndication feeds.",
+        "approach": "Integrated automated semantic entity extraction and markdown-first workflow tools.",
+        "result": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Kroma Media E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-47",
+        "slug": "nexus-commerce-e-headless-multi-region-b2b-procurement-suite-ph-5",
+        "status": "published",
+        "order": 47,
+        "name": "Nexus Commerce E \u2014 Headless Multi-Region B2B Procurement Suite Ph 5",
+        "client": "Nexus Commerce E",
+        "industry": "Media",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "booking-platforms",
+          "dashboard-systems",
+          "web-development"
+        ],
+        "outcome": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "challenge": "Wholesale buyers abandoned checkout due to slow enterprise tiered pricing tables.",
+        "approach": "Built an ultra-fast headless storefront with Edge caching and deterministic tier calculations.",
+        "result": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Nexus Commerce E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-48",
+        "slug": "stratum-capital-e-private-equity-deal-pipeline-and-compliance-crm-ph-5",
+        "status": "published",
+        "order": 48,
+        "name": "Stratum Capital E \u2014 Private Equity Deal Pipeline & Compliance CRM Ph 5",
+        "client": "Stratum Capital E",
+        "industry": "Real Estate",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "branding-and-identity",
+          "erp-systems",
+          "ui-ux-design"
+        ],
+        "outcome": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "challenge": "Due diligence documents were scattered across email threads and insecure cloud folders.",
+        "approach": "Engineered a secure tenant-isolated deal room with audit logging and automated KYC parsing.",
+        "result": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Stratum Capital E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-49",
+        "slug": "vesper-clinical-e-decentralized-clinical-trial-patient-engagement-app-ph-5",
+        "status": "published",
+        "order": 49,
+        "name": "Vesper Clinical E \u2014 Decentralized Clinical Trial Patient Engagement App Ph 5",
+        "client": "Vesper Clinical E",
+        "industry": "Energy",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "maintenance-and-support",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "challenge": "Patient dropout rates reached 38% due to complex daily symptom surveys.",
+        "approach": "Redesigned patient mobile-first interface with zero-friction biometrics and offline sync.",
+        "result": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Vesper Clinical E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-50",
+        "slug": "hyperion-cloud-e-multi-tenant-developer-observability-console-ph-5",
+        "status": "published",
+        "order": 50,
+        "name": "Hyperion Cloud E \u2014 Multi-Tenant Developer Observability Console Ph 5",
+        "client": "Hyperion Cloud E",
+        "industry": "Education",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "digital-marketing",
+          "ui-ux-design"
+        ],
+        "outcome": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "challenge": "Engineers struggled with sluggish query interfaces when searching petabyte logs.",
+        "approach": "Created a high-density, keyboard-driven observability UI with WebGL charts.",
+        "result": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 5 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 5 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Hyperion Cloud E"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-51",
+        "slug": "meridian-cargo-f-autonomous-route-and-freight-dispatch-engine-ph-6",
+        "status": "published",
+        "order": 51,
+        "name": "Meridian Cargo F \u2014 Autonomous Route & Freight Dispatch Engine Ph 6",
+        "client": "Meridian Cargo F",
+        "industry": "Logistics",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "erp-systems",
+          "web-development"
+        ],
+        "outcome": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "challenge": "Freight routing took 45 minutes of manual dispatching per line.",
+        "approach": "Engineered an event-driven dispatch algorithm with live telematics sync.",
+        "result": "Reduced dispatch latency to 850ms and saved $1.2M in annual deadhead miles.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Autonomous Route & Freight Dispatch Engine Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Meridian Cargo F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-52",
+        "slug": "aegis-payments-f-sub-millisecond-settlement-and-fraud-gateway-ph-6",
+        "status": "published",
+        "order": 52,
+        "name": "Aegis Payments F \u2014 Sub-Millisecond Settlement & Fraud Gateway Ph 6",
+        "client": "Aegis Payments F",
+        "industry": "Fintech",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "challenge": "Card reconciliation was failing under peak volume spikes.",
+        "approach": "Built a distributed settlement ledger with Rust workers and PostgreSQL CDC.",
+        "result": "Processed 12,000 tx/sec with zero drops and 99.999% ledger uptime.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Sub-Millisecond Settlement & Fraud Gateway Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Aegis Payments F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-53",
+        "slug": "solaris-diagnostics-f-oncology-imaging-and-pathology-review-portal-ph-6",
+        "status": "published",
+        "order": 53,
+        "name": "Solaris Diagnostics F \u2014 Oncology Imaging & Pathology Review Portal Ph 6",
+        "client": "Solaris Diagnostics F",
+        "industry": "Healthcare",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "erp-systems",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "challenge": "Clinicians waited 3 days for MRI scans to synchronize across regional nodes.",
+        "approach": "Architected a zero-footprint DICOM web viewer with progressive tile streaming.",
+        "result": "Reduced scan access latency from 72 hours to 4 seconds for 180 oncologists.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Oncology Imaging & Pathology Review Portal Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Solaris Diagnostics F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-54",
+        "slug": "axon-robotics-f-factory-floor-robot-fleet-orchestrator-ph-6",
+        "status": "published",
+        "order": 54,
+        "name": "Axon Robotics F \u2014 Factory Floor Robot Fleet Orchestrator Ph 6",
+        "client": "Axon Robotics F",
+        "industry": "SaaS",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "maintenance-and-support"
+        ],
+        "outcome": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "challenge": "Assembly line telemetry was siloed across legacy PLCs with no central control.",
+        "approach": "Engineered an OPC-UA telemetry gateway with real-time WebSockets and Grafana bridges.",
+        "result": "Eliminated 14 hours of unscheduled weekly downtime across 4 production plants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Factory Floor Robot Fleet Orchestrator Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Axon Robotics F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-55",
+        "slug": "prism-grid-f-distributed-microgrid-energy-balancing-dashboard-ph-6",
+        "status": "published",
+        "order": 55,
+        "name": "Prism Grid F \u2014 Distributed Microgrid Energy Balancing Dashboard Ph 6",
+        "client": "Prism Grid F",
+        "industry": "E-Commerce",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "dashboard-systems",
+          "seo-optimization"
+        ],
+        "outcome": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "challenge": "Grid operators lacked sub-minute visibility into solar and battery storage reserves.",
+        "approach": "Built a high-frequency time-series dashboard visualizing kilowatt flows across 80 nodes.",
+        "result": "Prevented 6 regional peak brownouts during summer heatwave spikes.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Distributed Microgrid Energy Balancing Dashboard Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Prism Grid F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-56",
+        "slug": "kroma-media-f-global-editorial-content-engine-and-asset-pipeline-ph-6",
+        "status": "published",
+        "order": 56,
+        "name": "Kroma Media F \u2014 Global Editorial Content Engine & Asset Pipeline Ph 6",
+        "client": "Kroma Media F",
+        "industry": "Manufacturing",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "ai-integrations",
+          "booking-platforms",
+          "seo-optimization",
+          "web-development"
+        ],
+        "outcome": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "challenge": "Writers spent 30% of editorial hours manually tagging and formatting syndication feeds.",
+        "approach": "Integrated automated semantic entity extraction and markdown-first workflow tools.",
+        "result": "Doubled daily article production rate while cutting editorial review cycles by 60%.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Global Editorial Content Engine & Asset Pipeline Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Kroma Media F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-57",
+        "slug": "nexus-commerce-f-headless-multi-region-b2b-procurement-suite-ph-6",
+        "status": "published",
+        "order": 57,
+        "name": "Nexus Commerce F \u2014 Headless Multi-Region B2B Procurement Suite Ph 6",
+        "client": "Nexus Commerce F",
+        "industry": "Media",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "booking-platforms",
+          "dashboard-systems",
+          "web-development"
+        ],
+        "outcome": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "challenge": "Wholesale buyers abandoned checkout due to slow enterprise tiered pricing tables.",
+        "approach": "Built an ultra-fast headless storefront with Edge caching and deterministic tier calculations.",
+        "result": "Increased B2B order completion rate by 42% and lifted average cart value by $8,400.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Headless Multi-Region B2B Procurement Suite Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Nexus Commerce F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-58",
+        "slug": "stratum-capital-f-private-equity-deal-pipeline-and-compliance-crm-ph-6",
+        "status": "published",
+        "order": 58,
+        "name": "Stratum Capital F \u2014 Private Equity Deal Pipeline & Compliance CRM Ph 6",
+        "client": "Stratum Capital F",
+        "industry": "Real Estate",
+        "year": 2026,
+        "featured": false,
+        "services": [
+          "branding-and-identity",
+          "erp-systems",
+          "ui-ux-design"
+        ],
+        "outcome": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "challenge": "Due diligence documents were scattered across email threads and insecure cloud folders.",
+        "approach": "Engineered a secure tenant-isolated deal room with audit logging and automated KYC parsing.",
+        "result": "Cut compliance check turnaround from 14 business days to 38 hours.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Private Equity Deal Pipeline & Compliance CRM Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Stratum Capital F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-59",
+        "slug": "vesper-clinical-f-decentralized-clinical-trial-patient-engagement-app-ph-6",
+        "status": "published",
+        "order": 59,
+        "name": "Vesper Clinical F \u2014 Decentralized Clinical Trial Patient Engagement App Ph 6",
+        "client": "Vesper Clinical F",
+        "industry": "Energy",
+        "year": 2025,
+        "featured": false,
+        "services": [
+          "maintenance-and-support",
+          "ui-ux-design",
+          "web-development"
+        ],
+        "outcome": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "challenge": "Patient dropout rates reached 38% due to complex daily symptom surveys.",
+        "approach": "Redesigned patient mobile-first interface with zero-friction biometrics and offline sync.",
+        "result": "Boosted protocol compliance to 94.2% across 3,400 multi-center trial participants.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Decentralized Clinical Trial Patient Engagement App Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Vesper Clinical F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "proj-60",
+        "slug": "hyperion-cloud-f-multi-tenant-developer-observability-console-ph-6",
+        "status": "published",
+        "order": 60,
+        "name": "Hyperion Cloud F \u2014 Multi-Tenant Developer Observability Console Ph 6",
+        "client": "Hyperion Cloud F",
+        "industry": "Education",
+        "year": 2024,
+        "featured": false,
+        "services": [
+          "dashboard-systems",
+          "digital-marketing",
+          "ui-ux-design"
+        ],
+        "outcome": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "challenge": "Engineers struggled with sluggish query interfaces when searching petabyte logs.",
+        "approach": "Created a high-density, keyboard-driven observability UI with WebGL charts.",
+        "result": "Decreased mean-time-to-detection (MTTD) by 73% across 45 enterprise customer teams.",
+        "gallery": [
+          {
+            "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 6 architecture overview",
+            "width": 800,
+            "height": 500
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+            "alt": "Multi-Tenant Developer Observability Console Ph 6 production interface",
+            "width": 800,
+            "height": 500
+          }
+        ],
+        "testimonial": {
+          "quote": "ATHYKA dissected our operational bottlenecks and delivered a system that immediately paid for itself.",
+          "name": "Alex Vance",
+          "role": "VP of Engineering, Hyperion Cloud F"
+        },
+        "externalLink": "https://athyka.com",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      }
+    ]
+  },
+  "services": {
+    "heading": "Services",
+    "sub": "Numbered by discipline. Engineered around the question you need answered.",
+    "ctaBand": {
+      "heading": "Not sure which one you need? Tell us the problem and we'll point you to the right one.",
+      "buttonText": "BOOK A CALL"
+    },
+    "items": [
+      {
+        "id": "srv-01",
+        "status": "published",
+        "order": 1,
+        "kicker": "BUILD",
+        "title": "Web development",
+        "challenge": "Is your website working as hard as you are?",
+        "body": "Fast, accessible sites and web apps that turn visitors into customers, built around what each page has to achieve, not around a template.",
+        "solves": [
+          "Slow, forgettable websites",
+          "Web apps your team can actually maintain",
+          "Pages that don't convert"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "web-development"
+      },
+      {
+        "id": "srv-02",
+        "status": "published",
+        "order": 2,
+        "kicker": "DESIGN",
+        "title": "UI/UX design",
+        "challenge": "Can a stranger understand what you do in five seconds?",
+        "body": "Interfaces designed around real user behavior: clear hierarchy, honest micro-interactions, and screens that make the next step obvious.",
+        "solves": [
+          "Confusing flows",
+          "Inconsistent interfaces",
+          "Features nobody finds"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "ui-ux-design"
+      },
+      {
+        "id": "srv-03",
+        "status": "published",
+        "order": 3,
+        "kicker": "OPERATE",
+        "title": "ERP systems",
+        "challenge": "How many spreadsheets run your business?",
+        "body": "Custom internal platforms that replace the patchwork: one source of truth for your people, your data and your workflows.",
+        "solves": [
+          "Data scattered across tools",
+          "Manual approvals and follow-ups",
+          "Software that fights your process"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "erp-systems"
+      },
+      {
+        "id": "srv-04",
+        "status": "published",
+        "order": 4,
+        "kicker": "AUTOMATE",
+        "title": "AI integrations",
+        "challenge": "Which parts of your week should never need a human?",
+        "body": "AI assistants and workflow automation with clear guardrails, so repetitive work runs itself and your people spend time on judgment.",
+        "solves": [
+          "Repetitive manual work",
+          "Slow customer replies",
+          "AI hype with no plan behind it"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "ai-integrations"
+      },
+      {
+        "id": "srv-05",
+        "status": "published",
+        "order": 5,
+        "kicker": "DISCOVER",
+        "title": "SEO optimization",
+        "challenge": "When customers search for you, who do they find instead?",
+        "body": "Technical SEO and answer-first content that earns organic visibility, built into the site rather than bolted on.",
+        "solves": [
+          "Invisible on search",
+          "Thin, unstructured content",
+          "Technical issues holding rankings back"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "seo-optimization"
+      },
+      {
+        "id": "srv-06",
+        "status": "published",
+        "order": 6,
+        "kicker": "TRANSACT",
+        "title": "Booking platforms",
+        "challenge": "How many bookings are lost between 'interested' and 'paid'?",
+        "body": "Reservation, scheduling and checkout flows that remove friction and keep your calendar and payments in sync.",
+        "solves": [
+          "Endless back-and-forth to confirm a slot",
+          "Double bookings",
+          "Clunky checkout"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "booking-platforms"
+      },
+      {
+        "id": "srv-07",
+        "status": "published",
+        "order": 7,
+        "kicker": "OBSERVE",
+        "title": "Dashboard systems",
+        "challenge": "Can you answer 'how are we doing?' without asking three people?",
+        "body": "Dashboards that turn raw data into decisions: live metrics, admin control centers and reporting leaders actually read.",
+        "solves": [
+          "Reports built by hand",
+          "Numbers nobody trusts",
+          "Decisions made on gut feel"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "dashboard-systems"
+      },
+      {
+        "id": "srv-08",
+        "status": "published",
+        "order": 8,
+        "kicker": "DEFINE",
+        "title": "Branding & identity",
+        "challenge": "If your logo disappeared tomorrow, would anyone recognize you?",
+        "body": "A brand system of voice, type, palette and rules that makes everything you ship look and sound like one company.",
+        "solves": [
+          "Inconsistent visuals",
+          "A brand that blends in",
+          "No guidelines for the team"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "branding-and-identity"
+      },
+      {
+        "id": "srv-09",
+        "status": "published",
+        "order": 9,
+        "kicker": "SUSTAIN",
+        "title": "Maintenance & support",
+        "challenge": "Who picks up the phone when it breaks at 9 p.m.?",
+        "body": "Monitoring, updates and ongoing improvements, so what we launch keeps getting better instead of slowly rotting.",
+        "solves": [
+          "Launch-and-vanish vendors",
+          "Outdated, insecure software",
+          "No one owning the roadmap"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "maintenance-and-support"
+      },
+      {
+        "id": "srv-10",
+        "status": "published",
+        "order": 10,
+        "kicker": "GROW",
+        "title": "Digital marketing",
+        "challenge": "Are you paying for traffic, or for customers?",
+        "body": "Paid media, social and email programs tied to measurable outcomes, so growth is something you plan, not something you hope for.",
+        "solves": [
+          "Ad spend with no clear return",
+          "Social with no strategy",
+          "Leads that never get followed up"
+        ],
+        "discussLabel": "Discuss this \u2197",
+        "updatedAt": "2026-10-01T12:00:00Z",
+        "slug": "digital-marketing"
+      }
+    ]
+  },
+  "process": {
+    "heading": "Process",
+    "sub": "How we take a project from problem to production.",
+    "items": [
+      {
+        "id": "step-01",
+        "status": "published",
+        "order": 1,
+        "title": "Understand the problem",
+        "body": "We ask the uncomfortable questions first: what hurts, who feels it, what would 'fixed' look like?",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "step-02",
+        "status": "published",
+        "order": 2,
+        "title": "Build it properly",
+        "body": "Small working releases you can see and use, not a big reveal after months of silence.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      },
+      {
+        "id": "step-03",
+        "status": "published",
+        "order": 3,
+        "title": "Teach your team",
+        "body": "We hand over the keys and train your people to run it, because software nobody understands isn't an asset.",
+        "updatedAt": "2026-10-01T12:00:00Z"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Got a problem worth solving?",
+    "sub": "Tell us what's not working. You'll get a straight answer, not a sales script.",
+    "primaryCta": "BOOK A CALL",
+    "crossLinkText": "Training your team instead? See Workshops \u2197",
+    "crossLinkHref": "/workshops"
+  },
+  "dialog": {
+    "title": "Book a call",
+    "sub": "Direct technical discussion. Tell us what is broken or costing you time.",
+    "submitLabel": "SUBMIT INQUIRY",
+    "successMessage": "Got it. We'll read it properly and reply with an honest take.",
+    "fields": {
+      "name": {
+        "label": "Your Name",
+        "placeholder": "e.g. Maya Lin"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "maya@company.com"
+      },
+      "problem": {
+        "label": "What problem are you trying to solve?",
+        "placeholder": "Describe what is currently slow, broken, or costing your team time..."
+      },
+      "service": {
+        "label": "Service of interest",
+        "defaultOption": "Not sure yet"
+      },
+      "company": {
+        "label": "Company / Organization (optional)",
+        "placeholder": "e.g. Acme Corp"
+      }
+    }
+  }
+}
