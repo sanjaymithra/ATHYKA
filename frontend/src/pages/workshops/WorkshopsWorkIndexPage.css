@@ -1,0 +1,10 @@
+/* ==========================================================================
+   WorkshopsWorkIndexPage Styles
+   ========================================================================== */
+
+.ws-work-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-bottom: 48px;
+}

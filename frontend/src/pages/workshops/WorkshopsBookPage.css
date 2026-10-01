@@ -1,0 +1,40 @@
+/* ==========================================================================
+   WorkshopsBookPage Styles
+   ========================================================================== */
+
+.ws-book-container {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding-bottom: 64px;
+}
+
+.ws-book-header {
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+  padding-bottom: 24px;
+}
+
+.ws-book-eyebrow {
+  display: block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #d8c48a;
+  margin-bottom: 8px;
+}
+
+.ws-book-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0 0 10px 0;
+}
+
+.ws-book-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  color: rgba(246, 239, 221, 0.65);
+  max-width: 680px;
+  margin: 0;
+}

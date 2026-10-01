@@ -1,0 +1,134 @@
+/* ==========================================================================
+   WorkshopsLanding Styles
+   ========================================================================== */
+
+.ws-landing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  padding-bottom: 48px;
+}
+
+.ws-landing-hero {
+  padding: 24px 0 36px;
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+}
+
+.ws-eyebrow {
+  display: inline-block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #d8c48a;
+  margin-bottom: 18px;
+}
+
+.ws-headline {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #f6efdd;
+  margin: 0 0 20px 0;
+  white-space: pre-line;
+}
+
+.ws-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(246, 239, 221, 0.75);
+  max-width: 680px;
+  margin: 0 0 32px 0;
+}
+
+.ws-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.ws-microcopy {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(246, 239, 221, 0.5);
+  margin: 0;
+}
+
+/* Formats Grid */
+.ws-formats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .ws-formats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ws-format-card {
+  background: rgba(18, 18, 16, 0.65);
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.format-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+  padding-bottom: 16px;
+}
+
+.format-duration {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #d8c48a;
+  font-weight: 700;
+}
+
+.format-name {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0;
+}
+
+.format-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.format-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: rgba(246, 239, 221, 0.45);
+}
+
+.format-text {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(246, 239, 221, 0.7);
+  margin: 0;
+}
+
+.format-highlight {
+  color: #d8c48a;
+  font-weight: 600;
+}

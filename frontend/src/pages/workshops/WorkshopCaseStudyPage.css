@@ -1,0 +1,15 @@
+/* ==========================================================================
+   WorkshopCaseStudyPage Styles
+   ========================================================================== */
+
+.ws-study-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 64px;
+}
+
+.ws-study-header {
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+  padding-bottom: 32px;
+}
