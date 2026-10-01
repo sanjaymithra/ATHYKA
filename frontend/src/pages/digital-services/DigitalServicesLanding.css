@@ -1,0 +1,334 @@
+/* ==========================================================================
+   Digital Services Landing Page Styles
+   ========================================================================== */
+
+.ds-landing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  padding-bottom: 48px;
+}
+
+/* 1. Hero */
+.ds-landing-hero {
+  padding: 24px 0 36px;
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+}
+
+.ds-eyebrow {
+  display: inline-block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #d8c48a;
+  margin-bottom: 18px;
+}
+
+.ds-headline {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #f6efdd;
+  margin: 0 0 20px 0;
+  white-space: pre-line;
+}
+
+.ds-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(246, 239, 221, 0.75);
+  max-width: 680px;
+  margin: 0 0 32px 0;
+}
+
+.ds-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.ds-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 32px;
+  background: #d8c48a;
+  color: #141414;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.ds-btn-gold:hover {
+  background: #f6efdd;
+  transform: translateY(-2px);
+}
+
+.ds-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 28px;
+  background: transparent;
+  color: #f6efdd;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  border: 1px solid rgba(246, 239, 221, 0.25);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.ds-btn-outline:hover {
+  border-color: #d8c48a;
+  transform: translateY(-2px);
+}
+
+.ds-microcopy {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(246, 239, 221, 0.5);
+  margin: 0;
+}
+
+/* Section Header */
+.ds-section-header {
+  margin-bottom: 28px;
+}
+
+.ds-section-num {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: #d8c48a;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ds-section-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f6efdd;
+  margin: 0;
+}
+
+.ds-section-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  color: rgba(246, 239, 221, 0.65);
+  margin: 6px 0 0;
+}
+
+/* 2. Problem Rows */
+.ds-problems-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ds-problem-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: rgba(18, 18, 16, 0.6);
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ds-problem-row:hover {
+  border-color: rgba(216, 196, 138, 0.4);
+  background: rgba(26, 26, 22, 0.85);
+  transform: translateX(4px);
+}
+
+.ds-problem-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ds-problem-icon {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  color: #d8c48a;
+  font-size: 16px;
+}
+
+.ds-problem-provocation {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f6efdd;
+}
+
+.ds-problem-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ds-problem-solves-label {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: rgba(216, 196, 138, 0.7);
+}
+
+.ds-problem-solution {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  color: #d8c48a;
+  font-weight: 500;
+}
+
+.ds-row-arrow {
+  color: rgba(246, 239, 221, 0.4);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.ds-problem-row:hover .ds-row-arrow {
+  transform: translateX(4px);
+  color: #d8c48a;
+}
+
+/* 3. Three Large Navigation Tiles */
+.ds-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ds-nav-tile {
+  background: rgba(18, 18, 16, 0.7);
+  border: 1px solid rgba(246, 239, 221, 0.08);
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ds-nav-tile:hover {
+  border-color: #d8c48a;
+  background: rgba(24, 24, 20, 0.9);
+  transform: translateY(-4px);
+}
+
+.ds-tile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ds-tile-tag {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #d8c48a;
+}
+
+.ds-tile-arrow {
+  font-size: 18px;
+  color: rgba(246, 239, 221, 0.4);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.ds-nav-tile:hover .ds-tile-arrow {
+  transform: translate(2px, -2px);
+  color: #d8c48a;
+}
+
+.ds-tile-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0 0 12px 0;
+}
+
+.ds-tile-desc {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(246, 239, 221, 0.65);
+  margin: 0;
+}
+
+/* 4. Process Steps */
+.ds-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ds-process-card {
+  background: rgba(14, 14, 12, 0.5);
+  border: 1px solid rgba(246, 239, 221, 0.06);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.ds-process-num {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #d8c48a;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.ds-process-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0 0 10px 0;
+}
+
+.ds-process-body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(246, 239, 221, 0.6);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ds-tiles-grid,
+  .ds-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-problem-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ds-problem-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

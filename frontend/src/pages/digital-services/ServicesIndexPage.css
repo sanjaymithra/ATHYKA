@@ -1,0 +1,159 @@
+/* ==========================================================================
+   ServicesIndexPage Styles: Deliberately Minimal Rows
+   ========================================================================== */
+
+.services-index-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 64px;
+}
+
+.services-index-header {
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+  padding-bottom: 24px;
+}
+
+.services-index-eyebrow {
+  display: block;
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #d8c48a;
+  margin-bottom: 8px;
+}
+
+.services-index-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0 0 10px 0;
+}
+
+.services-index-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 16px;
+  color: rgba(246, 239, 221, 0.65);
+  margin: 0;
+}
+
+/* Minimal Rows */
+.services-minimal-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(246, 239, 221, 0.1);
+}
+
+.service-row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 16px;
+  border-bottom: 1px solid rgba(246, 239, 221, 0.08);
+  text-decoration: none;
+  transition: background-color 0.18s ease, padding-left 0.2s ease;
+}
+
+.service-row-item:hover {
+  background: rgba(216, 196, 138, 0.05);
+  padding-left: 24px;
+}
+
+.service-row-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.service-row-order {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 13px;
+  color: rgba(246, 239, 221, 0.35);
+  min-width: 24px;
+}
+
+.service-row-kicker {
+  font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #d8c48a;
+  background: rgba(216, 196, 138, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.service-row-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #f6efdd;
+  margin: 0;
+}
+
+.service-row-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.service-row-challenge {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 14px;
+  color: rgba(246, 239, 221, 0.55);
+  margin: 0;
+  max-width: 440px;
+  text-align: right;
+}
+
+.service-row-arrow {
+  color: rgba(246, 239, 221, 0.3);
+  font-size: 18px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.service-row-item:hover .service-row-arrow {
+  transform: translateX(6px);
+  color: #d8c48a;
+}
+
+/* CTA */
+.services-index-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 36px 20px;
+  background: rgba(14, 14, 12, 0.5);
+  border: 1px dashed rgba(246, 239, 221, 0.15);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.cta-note {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 15px;
+  color: rgba(246, 239, 221, 0.7);
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .service-row-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .service-row-challenge {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .service-row-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
