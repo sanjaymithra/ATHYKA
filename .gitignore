@@ -42,6 +42,10 @@ pnpm-debug.log*
 Thumbs.db
 ehthumbs.db
 
+# Scratch & Local Traces
+scratch/
+frontend/scratch/
+
 # IDEs and Editors
 .idea/
 *.swp

@@ -26,13 +26,13 @@
   z-index: 1;
 }
 
+/* Static Grain: 4% opacity on its own layer, no mix-blend-mode */
 .stage-grain {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 2;
   opacity: 0.04;
-  mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -142,7 +142,7 @@
   width: 100%;
 }
 
-/* Each Quote & Service Hover Block Shares Grid Area 1 / 1 */
+/* Slide State Machine: only active slide is visible; all others hidden and removed from paint */
 .quote-item-block {
   grid-area: 1 / 1;
   display: flex;
@@ -154,7 +154,6 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 300ms ease, visibility 300ms ease;
 }
 
 .quote-item-block.is-active {
@@ -163,20 +162,14 @@
   pointer-events: auto;
 }
 
-.quote-item-block.is-outgoing {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 300ms ease, visibility 300ms ease;
-}
-
-/* Per-Line Mask Wrapper (overflow: hidden) */
+/* Per-Line Mask Wrapper (overflow: hidden with padding & negative margin to prevent clipping) */
 .quote-line-mask {
   overflow: hidden;
   display: block;
   line-height: 0.98;
-  padding: 4px 12px;
-  margin: 0;
+  padding: 0.18em 0.1em;
+  margin: -0.18em -0.1em;
+  box-sizing: border-box;
 }
 
 /* Typography: Inter, 600 weight, -0.045em letter-spacing */
@@ -191,25 +184,10 @@
   font-synthesis: none;
   white-space: nowrap;
   transform: translateY(105%);
-  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.quote-line-mask.line-1 .quote-line-text {
-  transition-delay: 0ms;
-}
-
-.quote-line-mask.line-2 .quote-line-text {
-  transition-delay: 90ms;
 }
 
 .quote-item-block.is-active .quote-line-text {
   transform: translateY(0);
-}
-
-.quote-item-block.is-outgoing .quote-line-text {
-  transform: translateY(-105%);
-  transition-duration: 500ms;
-  transition-delay: 0ms;
 }
 
 /* True-Italic Gold Accent with Self-Drawing Underline */
@@ -242,7 +220,7 @@
 }
 
 .quote-item-block.is-active .accent-underline-path {
-  animation: drawUnderline 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 350ms forwards;
+  animation: drawUnderline 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 450ms forwards;
 }
 
 @keyframes drawUnderline {
@@ -268,7 +246,7 @@
   border-bottom: 1px solid rgba(216, 196, 138, 0.4);
   pointer-events: auto;
   opacity: 0;
-  transition: opacity 300ms ease, color 200ms ease, border-color 200ms ease;
+  transition: color 200ms ease, border-color 200ms ease;
 }
 
 .quote-item-block.is-active .stage-hover-cta {
@@ -330,7 +308,7 @@
 }
 
 .stage-progress-bar.is-running {
-  animation: stageProgressFill 3500ms linear forwards;
+  animation: stageProgressFill 2500ms linear forwards;
 }
 
 .stage-progress-bar.is-paused {
@@ -411,12 +389,6 @@
   transition: opacity 400ms ease;
 }
 
-.philosophy-stage.is-primed .quote-line-text {
-  transform: translateY(105%) !important;
-  opacity: 0 !important;
-  transition: none !important;
-}
-
 .philosophy-stage.is-entered .stage-corner-tick,
 .philosophy-stage.is-entered .stage-label-tl {
   opacity: 1;
@@ -481,7 +453,7 @@
 }
 
 /* ==========================================================================
-   Orbit Icons Layer (Desktop)
+   Orbit Icons Layer (Desktop): transform + opacity only, no blur / drop-shadow
    ========================================================================== */
 .stage-orbit-plane {
   position: absolute;
@@ -490,7 +462,7 @@
 }
 
 .orbit-orb {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   display: flex;
@@ -503,13 +475,33 @@
   transform-origin: center center;
   transform-style: preserve-3d;
   will-change: transform, opacity;
-  transition: filter 300ms ease;
 }
 
 .orbit-orb:focus-visible {
   outline: 2px solid #D8C48A;
   outline-offset: 8px;
   border-radius: 8px;
+}
+
+/* Pre-rendered static radial-gradient layer for gold hover glow (no drop-shadow filter) */
+.orb-hover-glow {
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  right: -24px;
+  bottom: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 196, 138, 0.4) 0%, rgba(216, 196, 138, 0) 70%);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateZ(-1px);
+  transition: opacity 300ms ease;
+}
+
+.orbit-orb:hover .orb-hover-glow,
+.orbit-orb:focus-visible .orb-hover-glow,
+.orbit-orb.is-hovered .orb-hover-glow {
+  opacity: 1;
 }
 
 /* The SVG Object Component */
@@ -519,12 +511,6 @@
   width: auto;
   aspect-ratio: 160 / 200;
   overflow: visible;
-  transition: filter 300ms ease, transform 300ms ease;
-}
-
-.orbit-orb:hover .stage-object-svg,
-.orbit-orb:focus-visible .stage-object-svg {
-  filter: drop-shadow(0 0 24px rgba(216, 196, 138, 0.35));
 }
 
 /* Upright Monospace Label Below Icon */
@@ -549,7 +535,8 @@
 }
 
 .orbit-orb:hover .orb-label,
-.orbit-orb:focus-visible .orb-label {
+.orbit-orb:focus-visible .orb-label,
+.orbit-orb.is-hovered .orb-label {
   color: #D8C48A;
 }
 

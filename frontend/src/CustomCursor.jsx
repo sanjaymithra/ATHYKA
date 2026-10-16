@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, memo } from 'react';
+import { registerAnimation } from './utils/loop';
 import './CustomCursor.css';
 
-export default function CustomCursor() {
+const CustomCursor = memo(() => {
   const [enabled, setEnabled] = useState(false);
   const containerRef = useRef(null);
   const dotWrapperRef = useRef(null);
@@ -36,11 +37,8 @@ export default function CustomCursor() {
 
     document.documentElement.classList.add('has-custom-cursor');
 
-    let rafId = null;
-    let targetX = -100;
-    let targetY = -100;
-    let ringX = -100;
-    let ringY = -100;
+    const targetPosRef = { x: -100, y: -100 };
+    const ringPosRef = { x: -100, y: -100 };
     let isInitialized = false;
 
     let isVisible = false;
@@ -58,37 +56,40 @@ export default function CustomCursor() {
       container.setAttribute('data-state', state);
     };
 
-    const onPointerMove = e => {
-      targetX = e.clientX;
-      targetY = e.clientY;
+    // Event delegation on root for hover states (no per-frame or per-move hit testing!)
+    const onPointerOver = (e) => {
+      const el = e.target;
+      if (!el) return;
+
+      const isTechText = el.closest('.hero-techtext-container, .tech-text, [data-cursor="text"]');
+      const isInteractive = el.closest('a, button, [role="button"], .cta, .hero-btn, .orbit-orb, .static-orb-card');
+
+      let nextState = 'default';
+      if (isTechText) {
+        nextState = 'text';
+      } else if (isInteractive) {
+        nextState = 'hover';
+      }
+
+      if (nextState !== state) {
+        state = nextState;
+        syncDOM();
+      }
+    };
+
+    const onPointerMove = (e) => {
+      targetPosRef.x = e.clientX;
+      targetPosRef.y = e.clientY;
 
       if (!isInitialized) {
-        ringX = targetX;
-        ringY = targetY;
+        ringPosRef.x = targetPosRef.x;
+        ringPosRef.y = targetPosRef.y;
         isInitialized = true;
       }
 
       if (!isVisible) {
         isVisible = true;
         syncDOM();
-      }
-
-      const el = e.target;
-      if (el) {
-        const isTechText = el.closest('.hero-techtext-container, .tech-text, [data-cursor="text"]');
-        const isInteractive = el.closest('a, button, [role="button"], .cta, .hero-btn');
-
-        let nextState = 'default';
-        if (isTechText) {
-          nextState = 'text';
-        } else if (isInteractive) {
-          nextState = 'hover';
-        }
-
-        if (nextState !== state) {
-          state = nextState;
-          syncDOM();
-        }
       }
     };
 
@@ -113,43 +114,49 @@ export default function CustomCursor() {
       syncDOM();
     };
 
-    const loop = () => {
-      if (isInitialized) {
+    // Register with central loop scheduler: single rAF update per frame
+    const unregister = registerAnimation(
+      'cursor',
+      () => {
+        if (!isInitialized) return;
+
         // Dot follows pointer exactly
         if (dotWrapper) {
-          dotWrapper.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+          dotWrapper.style.transform = `translate3d(${targetPosRef.x}px, ${targetPosRef.y}px, 0)`;
         }
 
-        // Ring follows with easing (lerp factor ~0.18 per frame)
-        ringX += (targetX - ringX) * 0.18;
-        ringY += (targetY - ringY) * 0.18;
+        // Ring follows with smooth lerp
+        ringPosRef.x += (targetPosRef.x - ringPosRef.x) * 0.18;
+        ringPosRef.y += (targetPosRef.y - ringPosRef.y) * 0.18;
 
         if (ringWrapper) {
-          ringWrapper.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+          ringWrapper.style.transform = `translate3d(${ringPosRef.x.toFixed(1)}px, ${ringPosRef.y.toFixed(1)}px, 0)`;
         }
+      },
+      {
+        fps: 60,
+        priority: 100 // High priority for smooth input tracking
       }
-
-      rafId = requestAnimationFrame(loop);
-    };
+    );
 
     window.addEventListener('pointermove', onPointerMove, { passive: true });
+    window.addEventListener('pointerover', onPointerOver, { passive: true });
     window.addEventListener('pointerdown', onPointerDown, { passive: true });
     window.addEventListener('pointerup', onPointerUp, { passive: true });
     document.documentElement.addEventListener('pointerleave', onPointerLeave, { passive: true });
     document.documentElement.addEventListener('pointerenter', onPointerEnter, { passive: true });
     window.addEventListener('blur', onPointerLeave);
 
-    rafId = requestAnimationFrame(loop);
-
     return () => {
       document.documentElement.classList.remove('has-custom-cursor');
+      unregister();
       window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerover', onPointerOver);
       window.removeEventListener('pointerdown', onPointerDown);
       window.removeEventListener('pointerup', onPointerUp);
       document.documentElement.removeEventListener('pointerleave', onPointerLeave);
       document.documentElement.removeEventListener('pointerenter', onPointerEnter);
       window.removeEventListener('blur', onPointerLeave);
-      if (rafId) cancelAnimationFrame(rafId);
     };
   }, [enabled]);
 
@@ -172,4 +179,8 @@ export default function CustomCursor() {
       </div>
     </div>
   );
-}
+});
+
+CustomCursor.displayName = 'CustomCursor';
+
+export default CustomCursor;

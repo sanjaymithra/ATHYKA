@@ -6,6 +6,7 @@ import TechText from '../TechText';
 import Navbar from '../components/Navbar';
 import PhilosophyStage from '../components/PhilosophyStage';
 import PortalTransition from '../components/PortalTransition';
+import { pageSnap } from '../utils/pageSnap';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useContent } from '../content';
 
@@ -29,16 +30,41 @@ export default function HomePage() {
   const sentinelRef = useRef(null);
 
   const [navbarVisible, setNavbarVisible] = useState(pathname === '/home');
-  const hasInitializedHomeRef = useRef(false);
+  const isInitialMountRef = useRef(true);
+  const downwardMomentumLockRef = useRef(false);
+  const momentumTimerRef = useRef(null);
+  const urlSyncTimerRef = useRef(null);
 
-  // Transition trigger handlers
+  // Transition trigger handler (Forward only)
   const triggerForward = useCallback(() => {
+    if (pageSnap.isLocked() || portalRef.current?.isRunning?.()) return;
     portalRef.current?.triggerForward?.();
   }, []);
 
-  const triggerReverse = useCallback(() => {
-    portalRef.current?.triggerReverse?.();
-  }, []);
+  // Initialize Page Snap (never rest between hero and stage)
+  useEffect(() => {
+    pageSnap.init({
+      getStageTop: () => {
+        const stageEl = document.querySelector('#stage');
+        return stageEl ? (stageEl.getBoundingClientRect().top + (window.scrollY || document.documentElement.scrollTop || 0)) : window.innerHeight;
+      },
+      onSnapComplete: (targetY) => {
+        if (targetY === 0) {
+          navigate('/', { replace: true, preventScrollReset: true });
+          portalRef.current?.restoreHeroVisuals?.();
+          setNavbarVisible(false);
+        } else {
+          navigate('/home', { replace: true, preventScrollReset: true });
+          setNavbarVisible(true);
+          stageRef.current?.enter?.(400);
+        }
+      }
+    });
+
+    return () => {
+      pageSnap.destroy();
+    };
+  }, [navigate]);
 
   // When portal finishes flying forward onto the stage, PUSH to /home with preventScrollReset: true
   const handleTransitionEnd = useCallback((direction) => {
@@ -47,36 +73,47 @@ export default function HomePage() {
       const stageTop = stageEl ? (stageEl.getBoundingClientRect().top + window.scrollY) : window.innerHeight;
       navigate('/home', { preventScrollReset: true });
       window.scrollTo({ top: stageTop, behavior: 'instant' });
+
+      // Start 700ms momentum cooldown for downward input only
+      downwardMomentumLockRef.current = true;
+      if (momentumTimerRef.current) clearTimeout(momentumTimerRef.current);
+      momentumTimerRef.current = setTimeout(() => {
+        downwardMomentumLockRef.current = false;
+      }, 700);
     }
   }, [navigate]);
 
-  // When on / and portal is idle, ensure scroll position is at the hero (0)
-  React.useLayoutEffect(() => {
-    if (pathname === '/') {
-      portalRef.current?.reset?.();
+  // Initial mount scroll behavior
+  useEffect(() => {
+    if (pathname === '/' && isInitialMountRef.current) {
+      isInitialMountRef.current = false;
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
       window.scrollTo(0, 0);
       setNavbarVisible(false);
       techTextRef.current?.resume?.();
-      requestAnimationFrame(() => {
-        if (window.location.pathname === '/') {
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-          window.scrollTo(0, 0);
-        }
-      });
+    } else {
+      isInitialMountRef.current = false;
     }
-  }, [pathname]);
+  }, []);
 
-  // Handle popstate explicitly for browser Back to /
+  // Handle popstate explicitly for browser Back to / or /home
   useEffect(() => {
     const handlePopState = () => {
-      if (window.location.pathname === '/') {
+      const currentPath = window.location.pathname;
+      if (currentPath === '/') {
         portalRef.current?.reset?.();
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
         window.scrollTo(0, 0);
+        setNavbarVisible(false);
+        techTextRef.current?.resume?.();
+      } else if (currentPath === '/home') {
+        setNavbarVisible(true);
+        const stageEl = document.querySelector('#stage');
+        const stageTop = stageEl ? (stageEl.getBoundingClientRect().top + window.scrollY) : window.innerHeight;
+        window.scrollTo({ top: stageTop, behavior: 'instant' });
+        stageRef.current?.enter?.(400);
       }
     };
     window.addEventListener('popstate', handlePopState);
@@ -87,11 +124,9 @@ export default function HomePage() {
   useEffect(() => {
     if (pathname === '/home') {
       setNavbarVisible(true);
-      // If portal is NOT currently running, ensure stage is aligned and light entrance runs
       if (!portalRef.current?.isRunning?.()) {
         const stageEl = document.querySelector('#stage');
         const stageTop = stageEl ? (stageEl.getBoundingClientRect().top + window.scrollY) : window.innerHeight;
-        // If window is at 0 (e.g. direct load to /home), jump to stageTop
         if (window.scrollY < 100) {
           window.scrollTo({ top: stageTop, behavior: 'instant' });
         }
@@ -100,45 +135,47 @@ export default function HomePage() {
     }
   }, [pathname]);
 
-  // Sentinel Observer for Navbar when scrolling manually
+  // Dynamic Scroll Listener: Navbar visibility, Hero visuals restore, and URL Hysteresis Sync
   useEffect(() => {
-    if (!sentinelRef.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (portalRef.current?.isRunning?.()) return;
-        const isPastSentinel = !entry.isIntersecting && entry.boundingClientRect.top < 0;
-        if (pathname === '/home') {
-          setNavbarVisible(true);
-        } else {
-          setNavbarVisible(isPastSentinel);
-        }
-      },
-      { threshold: 0, rootMargin: '0px' }
-    );
-
-    observer.observe(sentinelRef.current);
-
-    const checkScroll = () => {
+    const onScroll = () => {
       if (portalRef.current?.isRunning?.()) return;
-      if (pathname === '/home') {
+
+      const currentScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const stageEl = document.querySelector('#stage');
+      const stageTop = stageEl ? (stageEl.getBoundingClientRect().top + currentScrollY) : window.innerHeight;
+
+      // Dynamic navbar visibility
+      if (currentScrollY > 0.50 * stageTop) {
         setNavbarVisible(true);
-        return;
+      } else if (currentScrollY < 0.40 * stageTop) {
+        setNavbarVisible(false);
+        portalRef.current?.restoreHeroVisuals?.();
       }
-      if (sentinelRef.current) {
-        const rect = sentinelRef.current.getBoundingClientRect();
-        setNavbarVisible(rect.top < 0);
-      }
+
+      // Debounced URL sync with hysteresis (>60% -> /home, <40% -> /)
+      if (urlSyncTimerRef.current) clearTimeout(urlSyncTimerRef.current);
+      urlSyncTimerRef.current = setTimeout(() => {
+        const idleScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+        const currentPath = window.location.pathname;
+
+        if (idleScrollY > 0.60 * stageTop) {
+          if (currentPath !== '/home') {
+            navigate('/home', { replace: true, preventScrollReset: true });
+          }
+        } else if (idleScrollY < 0.40 * stageTop) {
+          if (currentPath !== '/') {
+            navigate('/', { replace: true, preventScrollReset: true });
+          }
+        }
+      }, 150);
     };
 
-    window.addEventListener('scroll', checkScroll, { passive: true });
-    checkScroll();
-
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('scroll', onScroll);
+      if (urlSyncTimerRef.current) clearTimeout(urlSyncTimerRef.current);
     };
-  }, [pathname]);
+  }, [navigate]);
 
   // Mouse Parallax on Hero
   useEffect(() => {
@@ -180,44 +217,37 @@ export default function HomePage() {
     };
   }, []);
 
-  // Gesture: Wheel navigation
+  // Gesture: Wheel navigation (Forward only, downward intent at hero scrollY <= 2, route-agnostic)
   useEffect(() => {
     let wheelAccumulator = 0;
     let resetWheelTimer = null;
 
     const onWheel = (e) => {
-      if (portalRef.current?.isRunning?.() || portalRef.current?.isLocked?.()) return;
-
-      const scrollY = window.scrollY;
-      const stageEl = document.querySelector('#stage');
-      const stageTop = stageEl ? (stageEl.getBoundingClientRect().top + scrollY) : window.innerHeight;
-
-      // Downward wheel at hero
-      if (scrollY <= 15 && pathname === '/') {
-        if (e.deltaY > 0) {
-          if (e.cancelable) e.preventDefault();
-          wheelAccumulator += e.deltaY;
-          if (resetWheelTimer) clearTimeout(resetWheelTimer);
-          resetWheelTimer = setTimeout(() => { wheelAccumulator = 0; }, 250);
-
-          if (wheelAccumulator >= 10) {
-            wheelAccumulator = 0;
-            triggerForward();
-          }
-        }
+      if (pageSnap.isLocked() || portalRef.current?.isRunning?.()) {
+        if (e.cancelable) e.preventDefault();
+        return;
       }
-      // Upward wheel at stage top
-      else if (Math.abs(scrollY - stageTop) <= 25) {
-        if (e.deltaY < 0) {
-          if (e.cancelable) e.preventDefault();
-          wheelAccumulator += e.deltaY;
-          if (resetWheelTimer) clearTimeout(resetWheelTimer);
-          resetWheelTimer = setTimeout(() => { wheelAccumulator = 0; }, 250);
 
-          if (wheelAccumulator <= -10) {
-            wheelAccumulator = 0;
-            triggerReverse();
-          }
+      // Downward momentum cooldown after landing for 700ms
+      if (downwardMomentumLockRef.current && e.deltaY > 0) {
+        if (e.cancelable) e.preventDefault();
+        return;
+      }
+
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+
+      // Downward wheel at hero (scrollY <= 2)
+      if (scrollY <= 2 && e.deltaY > 0) {
+        if (e.cancelable) e.preventDefault();
+        wheelAccumulator += e.deltaY;
+        if (resetWheelTimer) clearTimeout(resetWheelTimer);
+        resetWheelTimer = setTimeout(() => {
+          wheelAccumulator = 0;
+        }, 250);
+
+        if (wheelAccumulator >= 10) {
+          wheelAccumulator = 0;
+          triggerForward();
         }
       }
     };
@@ -227,73 +257,78 @@ export default function HomePage() {
       window.removeEventListener('wheel', onWheel);
       if (resetWheelTimer) clearTimeout(resetWheelTimer);
     };
-  }, [pathname, triggerForward, triggerReverse]);
+  }, [triggerForward]);
 
-  // Gesture: Touch swipe
+  // Gesture: Touch swipe (Forward only, swipe up >= 16px at hero scrollY <= 2, route-agnostic)
   useEffect(() => {
     let touchStartY = 0;
+    let touchStartScrollY = 0;
 
     const onTouchStart = (e) => {
       if (e.touches && e.touches.length > 0) {
         touchStartY = e.touches[0].clientY;
+        touchStartScrollY = window.scrollY || document.documentElement.scrollTop || 0;
       }
     };
 
     const onTouchEnd = (e) => {
-      if (portalRef.current?.isRunning?.() || portalRef.current?.isLocked?.()) return;
+      if (pageSnap.isLocked() || portalRef.current?.isRunning?.()) return;
       if (!e.changedTouches || e.changedTouches.length === 0) return;
 
       const touchEndY = e.changedTouches[0].clientY;
-      const deltaY = touchStartY - touchEndY;
-      const scrollY = window.scrollY;
-      const stageEl = document.querySelector('#stage');
-      const stageTop = stageEl ? (stageEl.getBoundingClientRect().top + scrollY) : window.innerHeight;
+      const deltaY = touchStartY - touchEndY; // deltaY > 0 is swipe up (downward intent)
 
-      if (scrollY <= 15 && deltaY >= 16 && pathname === '/') {
+      if (downwardMomentumLockRef.current && deltaY > 0) return;
+
+      if (touchStartScrollY <= 2 && deltaY >= 16) {
         triggerForward();
-      } else if (Math.abs(scrollY - stageTop) <= 25 && deltaY <= -16) {
-        triggerReverse();
       }
     };
 
     window.addEventListener('touchstart', onTouchStart, { passive: true });
     window.addEventListener('touchend', onTouchEnd, { passive: true });
-
     return () => {
       window.removeEventListener('touchstart', onTouchStart);
       window.removeEventListener('touchend', onTouchEnd);
     };
-  }, [pathname, triggerForward, triggerReverse]);
+  }, [triggerForward]);
 
-  // Gesture: Keyboard navigation
+  // Gesture: Keyboard navigation (Forward only, Down / PageDown / Space at hero scrollY <= 2, route-agnostic)
   useEffect(() => {
     const onKeyDown = (e) => {
-      if (portalRef.current?.isRunning?.() || portalRef.current?.isLocked?.()) return;
+      if (pageSnap.isLocked() || portalRef.current?.isRunning?.()) {
+        e.preventDefault();
+        return;
+      }
 
       const target = e.target;
       if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
         return;
       }
 
-      const scrollY = window.scrollY;
-      const stageEl = document.querySelector('#stage');
-      const stageTop = stageEl ? (stageEl.getBoundingClientRect().top + scrollY) : window.innerHeight;
+      const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      const isForwardKey =
+        e.key === 'ArrowDown' ||
+        e.key === 'Down' ||
+        e.key === 'PageDown' ||
+        e.key === ' ' ||
+        e.key === 'Spacebar' ||
+        e.code === 'Space';
 
-      const forwardKeys = ['ArrowDown', 'PageDown', ' '];
-      const reverseKeys = ['ArrowUp', 'PageUp', 'Home'];
+      if (downwardMomentumLockRef.current && isForwardKey) {
+        e.preventDefault();
+        return;
+      }
 
-      if (scrollY <= 15 && forwardKeys.includes(e.key) && pathname === '/') {
+      if (scrollY <= 2 && isForwardKey) {
         e.preventDefault();
         triggerForward();
-      } else if (Math.abs(scrollY - stageTop) <= 25 && reverseKeys.includes(e.key)) {
-        e.preventDefault();
-        triggerReverse();
       }
     };
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [pathname, triggerForward, triggerReverse]);
+  }, [triggerForward]);
 
   const handleStageNavigate = (targetPath) => {
     navigate(targetPath);

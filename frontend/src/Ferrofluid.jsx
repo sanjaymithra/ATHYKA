@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
+import { registerAnimation, getCurrentDPR } from './utils/loop';
 import './Ferrofluid.css';
 
 const MAX_COLORS = 8;
 
-const hexToRGB = hex => {
+const hexToRGB = (hex) => {
   const c = hex.replace('#', '').padEnd(6, '0');
   const r = parseInt(c.slice(0, 2), 16) / 255;
   const g = parseInt(c.slice(2, 4), 16) / 255;
@@ -14,7 +15,7 @@ const hexToRGB = hex => {
   return [r, g, b];
 };
 
-const prepColors = input => {
+const prepColors = (input) => {
   const base = (input && input.length ? input : ['#4F46E5', '#06B6D4', '#E0F2FE']).slice(0, MAX_COLORS);
   const count = base.length;
   const arr = [];
@@ -31,7 +32,7 @@ const prepColors = input => {
   return { arr, count, avg };
 };
 
-const flowVec = d => {
+const flowVec = (d) => {
   switch (d) {
     case 'up':
       return [0, 1];
@@ -189,46 +190,40 @@ void main() {
 }
 `;
 
-const Ferrofluid = ({
+const Ferrofluid = memo(({
   className,
-  dpr,
   paused = false,
   colors = ['#ffffff', '#ffffff', '#ffffff'],
-  speed = 0.5,
-  scale = 1.6,
+  speed = 0.4,
+  scale = 1,
   turbulence = 1,
   fluidity = 0.1,
   rimWidth = 0.2,
-  sharpness = 2.5,
-  shimmer = 1.5,
-  glow = 2,
+  sharpness = 3,
+  shimmer = 1.2,
+  glow = 1.5,
   flowDirection = 'down',
-  opacity = 1,
+  opacity = 0.9,
   mouseInteraction = true,
   mouseStrength = 1,
-  mouseRadius = 0.35,
-  mouseDampening = 0.15,
-  mixBlendMode
+  mouseRadius = 0.3,
+  mouseDampening = 0.15
 }) => {
   const containerRef = useRef(null);
-  const rafRef = useRef(null);
-  const programRef = useRef(null);
-  const meshRef = useRef(null);
-  const geometryRef = useRef(null);
-  const rendererRef = useRef(null);
-  const mouseTargetRef = useRef([0, 0]);
-  const lastTimeRef = useRef(0);
+  const isHeroVisibleRef = useRef(true);
+  const pausedRef = useRef(paused);
+  pausedRef.current = paused;
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
+    const initialDpr = getCurrentDPR(1.5);
     const renderer = new Renderer({
-      dpr: dpr ?? (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1),
+      dpr: initialDpr,
       alpha: true,
       antialias: true
     });
-    rendererRef.current = renderer;
     const gl = renderer.gl;
     const canvas = gl.canvas;
     gl.clearColor(0, 0, 0, 0);
@@ -269,15 +264,15 @@ const Ferrofluid = ({
     };
 
     const program = new Program(gl, { vertex, fragment, uniforms });
-    programRef.current = program;
-
     const geometry = new Triangle(gl);
-    geometryRef.current = geometry;
     const mesh = new Mesh(gl, { geometry, program });
-    meshRef.current = mesh;
+
+    let currentQualityScale = 1.0;
 
     const resize = () => {
       const rect = container.getBoundingClientRect();
+      const currentDpr = getCurrentDPR(1.5);
+      renderer.dpr = currentDpr;
       renderer.setSize(rect.width, rect.height);
       uniforms.iResolution.value = [gl.drawingBufferWidth, gl.drawingBufferHeight, 1];
     };
@@ -286,72 +281,97 @@ const Ferrofluid = ({
     const ro = new ResizeObserver(resize);
     ro.observe(container);
 
-    const onPointerMove = e => {
+    // Hero Visibility Observer: Freeze when hero is < 15% visible
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        isHeroVisibleRef.current = entry.intersectionRatio >= 0.15;
+      },
+      { threshold: [0, 0.15, 0.5, 1.0] }
+    );
+    heroObserver.observe(container);
+
+    const mouseTarget = [0, 0];
+    let lastTime = 0;
+
+    const onPointerMove = (e) => {
       const rect = canvas.getBoundingClientRect();
       const sc = renderer.dpr || 1;
       const x = (e.clientX - rect.left) * sc;
       const y = (rect.height - (e.clientY - rect.top)) * sc;
-      mouseTargetRef.current = [x, y];
+      mouseTarget[0] = x;
+      mouseTarget[1] = y;
       if (mouseDampening <= 0) {
         uniforms.iMouse.value = [x, y];
       }
     };
+
     if (mouseInteraction) {
-      canvas.addEventListener('pointermove', onPointerMove);
+      canvas.addEventListener('pointermove', onPointerMove, { passive: true });
     }
 
-    const loop = t => {
-      rafRef.current = requestAnimationFrame(loop);
-      uniforms.iTime.value = t * 0.001;
-      if (mouseDampening > 0) {
-        if (!lastTimeRef.current) lastTimeRef.current = t;
-        const dt = (t - lastTimeRef.current) / 1000;
-        lastTimeRef.current = t;
-        const tau = Math.max(1e-4, mouseDampening);
-        let factor = 1 - Math.exp(-dt / tau);
-        if (factor > 1) factor = 1;
-        const target = mouseTargetRef.current;
-        const cur = uniforms.iMouse.value;
-        cur[0] += (target[0] - cur[0]) * factor;
-        cur[1] += (target[1] - cur[1]) * factor;
-      } else {
-        lastTimeRef.current = t;
-      }
-      if (!paused && programRef.current && meshRef.current) {
-        try {
-          renderer.render({ scene: meshRef.current });
-        } catch (e) {
-          console.error(e);
+    // Register with central loop scheduler
+    const unregister = registerAnimation(
+      'ferrofluid',
+      (now, dt, qualityScale) => {
+        // Adapt resolution if quality scale stepped down
+        if (qualityScale !== currentQualityScale) {
+          currentQualityScale = qualityScale;
+          resize();
         }
+
+        uniforms.iTime.value = now * 0.001;
+
+        if (mouseDampening > 0) {
+          if (!lastTime) lastTime = now;
+          const deltaSec = (now - lastTime) / 1000;
+          lastTime = now;
+          const tau = Math.max(1e-4, mouseDampening);
+          let factor = 1 - Math.exp(-deltaSec / tau);
+          if (factor > 1) factor = 1;
+          const cur = uniforms.iMouse.value;
+          cur[0] += (mouseTarget[0] - cur[0]) * factor;
+          cur[1] += (mouseTarget[1] - cur[1]) * factor;
+        } else {
+          lastTime = now;
+        }
+
+        try {
+          renderer.render({ scene: mesh });
+        } catch (e) {
+          console.error('Ferrofluid render error:', e);
+        }
+      },
+      {
+        getVisible: () => isHeroVisibleRef.current && !pausedRef.current,
+        fps: 60,
+        priority: 10
       }
-    };
-    rafRef.current = requestAnimationFrame(loop);
+    );
 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      unregister();
       if (mouseInteraction) canvas.removeEventListener('pointermove', onPointerMove);
       ro.disconnect();
+      heroObserver.disconnect();
+
       if (canvas.parentElement === container) {
         container.removeChild(canvas);
       }
-      const callIfFn = (obj, key) => {
-        const fn = obj && obj[key];
-        if (typeof fn === 'function') {
-          fn.call(obj);
-        }
-      };
-      callIfFn(programRef.current, 'remove');
-      callIfFn(geometryRef.current, 'remove');
-      callIfFn(meshRef.current, 'remove');
-      callIfFn(rendererRef.current, 'destroy');
-      programRef.current = null;
-      geometryRef.current = null;
-      meshRef.current = null;
-      rendererRef.current = null;
+
+      // Explicit WebGL cleanup to guarantee zero context leak across route transitions
+      try {
+        const loseExt = gl.getExtension('WEBGL_lose_context');
+        if (loseExt) loseExt.loseContext();
+      } catch (e) {}
+
+      try {
+        program.remove();
+        geometry.remove();
+        mesh.remove();
+        renderer.destroy();
+      } catch (e) {}
     };
   }, [
-    dpr,
-    paused,
     colors,
     speed,
     scale,
@@ -373,11 +393,10 @@ const Ferrofluid = ({
     <div
       ref={containerRef}
       className={`ferrofluid-container ${className ?? ''}`}
-      style={{
-        ...(mixBlendMode && { mixBlendMode })
-      }}
     />
   );
-};
+});
+
+Ferrofluid.displayName = 'Ferrofluid';
 
 export default Ferrofluid;

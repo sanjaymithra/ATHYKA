@@ -9,6 +9,7 @@ import React, {
   useImperativeHandle
 } from 'react';
 import { findEntryPatch } from '../utils/inkPatch';
+import { pageSnap } from '../utils/pageSnap';
 import './PortalTransition.css';
 
 const DURATION_MS = 2600;
@@ -98,6 +99,7 @@ const PortalTransition = forwardRef((props, ref) => {
     if (failsafeTimerRef.current) clearTimeout(failsafeTimerRef.current);
 
     isRunningRef.current = false;
+    pageSnap.setPortalRunning(false);
     pRef.current = finalP;
     setPState(finalP);
     applyVisualFades(finalP);
@@ -227,6 +229,7 @@ const PortalTransition = forwardRef((props, ref) => {
     // Prepare state
     directionRef.current = direction;
     isRunningRef.current = true;
+    pageSnap.setPortalRunning(true);
     isLockedRef.current = true;
     hasCrossedScrollRef.current = false;
     hasTriggeredEnterRef.current = false;
@@ -276,6 +279,7 @@ const PortalTransition = forwardRef((props, ref) => {
     if (momentumLockTimerRef.current) clearTimeout(momentumLockTimerRef.current);
 
     isRunningRef.current = false;
+    pageSnap.setPortalRunning(false);
     isLockedRef.current = false;
     pRef.current = 0;
     setPState(0);
@@ -298,6 +302,23 @@ const PortalTransition = forwardRef((props, ref) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [heroRef, techTextRef]);
 
+  // Restore hero visuals without resetting scroll (used when natively scrolling back up to hero)
+  const restoreHeroVisuals = useCallback(() => {
+    if (isRunningRef.current) return;
+    pRef.current = 0;
+    setPState(0);
+    setIsActive(false);
+
+    const heroEl = heroRef?.current || document.querySelector('.app-hero-container');
+    if (heroEl) {
+      heroEl.style.setProperty('--hero-out', '0');
+    }
+    document.documentElement.style.setProperty('--ferro-opacity', '1');
+
+    techTextRef.current?.setVisible?.(true);
+    techTextRef.current?.resume?.();
+  }, [heroRef, techTextRef]);
+
   // Dev seek hook for deterministic Playwright testing
   useImperativeHandle(ref, () => ({
     seek: (p) => {
@@ -318,15 +339,15 @@ const PortalTransition = forwardRef((props, ref) => {
         top: p < 0.77 ? 0 : stageTopRef.current,
         behavior: 'instant'
       });
-      renderFrame(p, p >= pRef.current ? 'forward' : 'reverse');
+      renderFrame(p, 'forward');
     },
     triggerForward: () => trigger('forward'),
-    triggerReverse: () => trigger('reverse'),
     isRunning: () => isRunningRef.current,
     isLocked: () => isLockedRef.current,
     getP: () => pRef.current,
-    reset: resetToHero
-  }), [getStageTop, renderFrame, resetToHero, techTextRef, trigger]);
+    reset: resetToHero,
+    restoreHeroVisuals
+  }), [getStageTop, renderFrame, resetToHero, restoreHeroVisuals, techTextRef, trigger]);
 
   // Global window.__portal hook for dev / verification automation
   useEffect(() => {
@@ -349,13 +370,14 @@ const PortalTransition = forwardRef((props, ref) => {
           top: p < 0.77 ? 0 : stageTopRef.current,
           behavior: 'instant'
         });
-        renderFrame(p, p >= pRef.current ? 'forward' : 'reverse');
+        renderFrame(p, 'forward');
       },
       triggerForward: () => trigger('forward'),
-      triggerReverse: () => trigger('reverse'),
       isRunning: () => isRunningRef.current,
       isLocked: () => isLockedRef.current,
-      getP: () => pRef.current
+      getP: () => pRef.current,
+      reset: resetToHero,
+      restoreHeroVisuals
     };
 
     return () => {
